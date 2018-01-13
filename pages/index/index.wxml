@@ -1,0 +1,50 @@
+<view class="page_header">
+  洞见 Insights
+</view>
+
+<view class='category_links'>
+  <view class='category_link'>新兴技术</view>
+  <view class='category_link'>职业发展</view>
+  <view class='category_link'>敏捷</view>
+  <view class='category_link'>软件测试</view>
+  <view class='category_link'>数字战略平台</view>
+  <view class='category_link' style='color: #1286FE'>全部分类</view>
+</view>
+
+<view class="common_header {{isFixedToTop?'fixed':''}}">
+  <view>
+    近期洞见
+  </view>
+  <view wx:if="{{isFixedToTop}}" class='exchange_icon'>
+    <image style='width:25rpx; height:25rpx;padding-right:4px' mode="aspectFill" src="../../img/exchange.svg"></image>
+    切换分类
+  </view>
+</view>
+
+<view class='recent_post'>
+  <view class='articleBlock' wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}' bindtap='goToArticle'>
+    <view class='categories'>
+      <block wx:for="{{article.categoryName}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
+        <view class='category'>
+          {{category}}
+        </view>
+      </block>
+    </view>
+    <view class="title">
+      <text>{{article.title.rendered}}</text>
+    </view>
+    <image class='articleImage' wx:if="{{article.featured_image_src != null}}" mode="aspectFill" src="{{article.featured_image_src}}"></image>
+    <view class="excerpt">
+      {{article.simpleExcerpt}}
+    </view>
+    <view class="details">
+      <text>{{article.author_name}}</text>
+      <text>·</text>
+      <text>{{article.date}}</text>
+    </view>
+  </view>
+
+  <view style='text-align:center' wx:if="{{isLoading}}">
+    <image style='width:150rpx; height:70rpx;' mode="aspectFill" src="../../img/loading.svg"></image>
+  </view>
+</view>
