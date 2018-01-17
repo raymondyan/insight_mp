@@ -1,6 +1,6 @@
 const app = getApp()
 const { getRecentPost } = require('../../utils/api');
-const { findCategoryNameByIds } = require('../../utils/categories');
+const { findCategoryNameByIds, categories } = require('../../utils/categories');
 const R = require('../../utils/ramda.js');
 const { formatTime } = require('../../utils/util')
 const codeTransformation = require('../../wxParser/codeTransformation');
@@ -11,14 +11,22 @@ Page({
     articleList: [],
     isLoading: true,
     isFixedToTop: false,
-    pageNum: 1
+    hideLayer: -1,
+    pageNum: 1,
+    animationOfCategoryPicker: {},
   },
   onLoad: function () {
     let scope = this
     scope.setNav("")
     scope.recentPost(scope.data.pageNum)
+    var quickCategories = categories.slice(0, 5)
+    let fullPickerHeight = (30 + Math.ceil(categories.length / 3) * 48) * -1
     scope.setData({
-      pageNum: scope.data.pageNum + 1
+      pageNum: scope.data.pageNum + 1,
+      catetories: categories,
+      quickCategories: quickCategories, 
+      translateH: fullPickerHeight,
+      topHeight: fullPickerHeight
     })
   },
   onPageScroll: function (O) {
@@ -64,7 +72,31 @@ Page({
       }
     });
   },
-  onReachBottom: function(){
+  callFullPicker: function () {
+    let scope = this
+    var animation = wx.createAnimation({
+      duration: 450,
+      timingFunction: 'ease-in-out',
+    })
+    this.animation = animation
+
+    let height = scope.data.translateH * -1
+    let isHideLayer = scope.data.hideLayer * -1
+
+    scope.setData({
+      translateH: height,
+      hideLayer: isHideLayer
+    })
+    animation.translateY(height).step()
+
+    this.setData({
+      animationDataOfLightChange: animation.export()
+    })
+  },
+  closeFullPicker: function () {
+    this.callFullPicker()
+  },
+  onReachBottom: function () {
     let scope = this;
     scope.setData({
       isLoading: true
@@ -72,6 +104,11 @@ Page({
     scope.recentPost(scope.data.pageNum)
     scope.setData({
       pageNum: scope.data.pageNum + 1
+    })
+  },
+  goToArticle: function(e){
+    wx.navigateTo({
+      url: '../article/article?aid=' + e.currentTarget.id
     })
   },
   setNav: function (title) {

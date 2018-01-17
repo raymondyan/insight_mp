@@ -43,12 +43,7 @@ const categories =
       "slug": "society-and-technology",
 
     },
-    {
-      "id": 87,
-      "name": "服务于社会领域",
-      "slug": "serving-the-social-sector",
-
-    },
+    
     {
       "id": 604,
       "name": "微服务",
@@ -75,12 +70,6 @@ const categories =
 
     },
     {
-      "id": 615,
-      "name": "组织运营变革",
-      "slug": "%e7%bb%84%e7%bb%87%e8%bf%90%e8%90%a5%e5%8f%98%e9%9d%a9",
-
-    },
-    {
       "id": 605,
       "name": "DevOps",
       "slug": "devops",
@@ -102,12 +91,6 @@ const categories =
       "id": 86,
       "name": "互联网金融",
       "slug": "internet-of-finance",
-
-    },
-    {
-      "id": 1,
-      "name": "未分类",
-      "slug": "uncategorized",
 
     },
     {
@@ -150,6 +133,24 @@ const categories =
       "id": 613,
       "name": "EDGE",
       "slug": "%e4%bb%b7%e5%80%bc%e9%a9%b1%e5%8a%a8%e7%ae%a1%e7%90%86%ef%bc%8c%e7%b2%be%e7%9b%8a%e4%bc%81%e4%b8%9a%e7%9a%84%e6%8a%95%e8%b5%84%e7%ae%a1%e7%90%86%e6%8c%87%e5%8d%97",
+    },
+    {
+      "id": 87,
+      "name": "服务于社会领域",
+      "slug": "serving-the-social-sector",
+
+    },
+    {
+      "id": 615,
+      "name": "组织运营变革",
+      "slug": "%e7%bb%84%e7%bb%87%e8%bf%90%e8%90%a5%e5%8f%98%e9%9d%a9",
+
+    },
+    {
+      "id": 1,
+      "name": "未分类",
+      "slug": "uncategorized",
+
     }
   ]
 

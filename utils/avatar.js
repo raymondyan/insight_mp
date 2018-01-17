@@ -71,7 +71,7 @@ const avatar = {
     'xiaoran':'xiaoran-17.jpg',
     'xiayin':'xiayin-108.jpeg',
     'xiehaiyan':'xiehaiyan-87.png',
-    'xiongjie':'xiongjie-52.png',
+    'xiongjie':'xiongjie-131.jpeg',
     'xiongzichuan':'xiongzichuan-15.jpg',
     'xuxiao':'xuxiao-93.png',
     'yangbo':'yangbo-11.jpg',

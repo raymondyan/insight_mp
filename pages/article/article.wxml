@@ -1,0 +1,34 @@
+<import src="../../wxParser/index.wxml" />
+<view wx:if="{{showLoading}}" class='fullWindowModal' style='height:{{fullWindowHeight}}px'>
+  <image class='loadingGif' src='../../img/loading.gif' mode='aspectFill'></image>
+</view>
+<view class="{{hideLayer === 1 ? 'hidden-layer hide':'hidden-layer'}}" bindtap="closeOtherBar"></view>
+
+<view class="articleIntro" style="background-image: url('{{thumbUrl}}');height:{{thumbUrl?thumbHeight:200}}px ">
+  <text class="articleTitle">{{title}}</text>
+  <view class="detail">
+    <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>
+    <text class="authorName">{{author.name}}</text>
+    <text class="articleCategory">分类：{{categories}}</text>
+  </view>
+
+</view>
+<view class="wxParser">
+  <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
+</view>
+<view class="action-bar">
+  <image class="action-icon" src="../../img/back.png" mode="aspectFit" bindtap="goBack"></image>
+  <button open-type="share">
+    <image class="action-icon" src="../../img/forward.png" mode="aspectFit" plain="true"></image>
+  </button>
+  <image class="action-icon" src="../../img/comment.png" mode="aspectFit"></image>
+  <image class="action-icon" src="../../img/more.png" mode="aspectFit" bindtap="callLightChange"></image>
+</view>
+<view class="light-change" animation="{{animationDataOfLightChange}}">
+  <view class="light-change-tips">
+    <text>调节亮度</text>
+  </view>
+  <view class="body-view">
+    <slider bindchanging="changeLight" activeColor="#707070" value="{{sliderValue}}" />
+  </view>
+</view>

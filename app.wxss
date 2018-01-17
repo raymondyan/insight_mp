@@ -1,3 +1,5 @@
+@import "/wxParser/index.wxss";
+
 .page_header {
   display: flex;
   height: 50px;
