@@ -8,7 +8,8 @@ Page({
     animationDataOfLightChange: {},
     translateH: 95,
     showLoading: true,
-    hideLayer: 1
+    hideLayer: 1,
+    defaultThumb: "../../img/deafult_thumb.png"
   },
   onPageScroll: function(O){
     let scope = this;
@@ -40,6 +41,7 @@ Page({
         })
       }
     })
+    
     wx.getSystemInfo({
       success: function (res) {
         scope.setData({
@@ -66,7 +68,6 @@ Page({
       }
     });
   },
-
 
   getAuthor: function (authorId) {
     let scope = this;
@@ -96,7 +97,6 @@ Page({
       }
     });
   },
-
   getThumb: function (mediaId) {
     let scope = this;
     app.wxRequest(getArticleThumb(mediaId), 'GET').then((res) => {
@@ -166,11 +166,13 @@ Page({
   },
 
   onShareAppMessage: function (res) {
-    let title = '【Insights】' + this.data.title;
+    let title = this.data.title;
     let path = '/pages/article/article?aid=' + this.data.articleId
+    let imageUrl = this.data.thumbUrl || ''
     return {
       title: title,
-      path: path
+      path: path,
+      imageUrl: imageUrl
     }
   },
   closeOtherBar: function () {

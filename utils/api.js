@@ -1,4 +1,4 @@
-const HOST = "http://ec2-52-80-59-127.cn-north-1.compute.amazonaws.com.cn:81/wp-json"
+const HOST = "http://insight-dev.thoughtworks.cn/wp-json"
 
 function getURL(api) {
   return HOST + api;

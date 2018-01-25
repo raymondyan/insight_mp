@@ -1,3 +1,30 @@
+page {
+  padding-top: 65px;
+}
+
+.navbar {
+  background-color: #FFF;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  width: 750rpx;
+  height: 65px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.navbar-opacity {
+  background-color:hsla(0,0%,100%,.97);
+  border-bottom: 1rpx solid #ebebeb; 
+}
+
+.navbar_text {
+  font-size: 19px;
+  color: #000;
+  font-weight: 500;
+  padding-top: 30px;
+}
+
 .articleBlock {
   padding: 15px 0 15px 0;
   border-bottom: 9px solid #ebebeb;
@@ -33,13 +60,14 @@
 }
 
 .full_category_links {
+  padding-top: 65px;
   padding-bottom: 20px;
 }
 
 .over-panel {
   position: fixed;
   background-color: #fff;
-  z-index: 1002;
+  z-index: 1003;
 }
 
 .over-panel-layer {
@@ -66,10 +94,10 @@
 
 .fixed {
   position: fixed;
-  top: 0;
-  height: 39px;
-  border-bottom: 1px solid #ebebeb;
-  border-top: 1px solid #ebebeb;
+  z-index: 1001;
+  top: 65px;
+  border-bottom: 1rpx solid #ebebeb;
+  background-color:hsla(0,0%,100%,.98);
 }
 
 .fixed + .recent_post {
@@ -111,6 +139,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-break: break-all;
 }
 
 .articleBlock .details {

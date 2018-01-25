@@ -4,7 +4,7 @@ const { findCategoryNameByIds, categories } = require('../../utils/categories');
 const R = require('../../utils/ramda.js');
 const { formatTime } = require('../../utils/util')
 const codeTransformation = require('../../wxParser/codeTransformation');
-let pageTitle = "洞见 Insights"
+let pageTitle = "Insights"
 
 Page({
   data: {
@@ -17,10 +17,9 @@ Page({
   },
   onLoad: function () {
     let scope = this
-    scope.setNav("")
     scope.recentPost(scope.data.pageNum)
     var quickCategories = categories.slice(0, 5)
-    let fullPickerHeight = (30 + Math.ceil(categories.length / 3) * 48) * -1
+    let fullPickerHeight = (90 + Math.ceil(categories.length / 3) * 48) * -1
     scope.setData({
       pageNum: scope.data.pageNum + 1,
       catetories: categories,
@@ -37,7 +36,7 @@ Page({
     } else {
       scope.setNav("")
     }
-    if (O.scrollTop > 160) {
+    if (O.scrollTop > 160.5) {
       scope.setData({
         isFixedToTop: true
       })
@@ -57,7 +56,7 @@ Page({
           items.title = {
             rendered: codeTransformation.transform(item.title.rendered)
           }
-          items.simpleExcerpt = item.excerpt.rendered.replace(/<[^>]+>/g, "").replace("\n", "")
+          items.simpleExcerpt = codeTransformation.transform(item.excerpt.rendered.replace(/<[^>]+>/g, "").replace("\n", ""))
           items.date = formatTime(new Date(item.date))
           items.categoryName = findCategoryNameByIds(item.categories)
           items.featured_image_src = item.featured_image_src
@@ -75,7 +74,7 @@ Page({
   callFullPicker: function () {
     let scope = this
     var animation = wx.createAnimation({
-      duration: 450,
+      duration: 350,
       timingFunction: 'ease-in-out',
     })
     this.animation = animation
@@ -111,9 +110,17 @@ Page({
       url: '../article/article?aid=' + e.currentTarget.id
     })
   },
+  goToCategoryPage: function (e) {
+    wx.navigateTo({
+      url: '../categoryPage/categoryPage?cid=' + e.currentTarget.id
+    })
+    if (this.data.hideLayer === 1){
+      this.callFullPicker()    
+    }
+  },
   setNav: function (title) {
-    wx.setNavigationBarTitle({
-      title: title
+    this.setData({
+      navTitle: title
     })
   }
 })

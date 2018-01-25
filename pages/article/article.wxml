@@ -4,7 +4,7 @@
 </view>
 <view class="{{hideLayer === 1 ? 'hidden-layer hide':'hidden-layer'}}" bindtap="closeOtherBar"></view>
 
-<view class="articleIntro" style="background-image: url('{{thumbUrl}}');height:{{thumbUrl?thumbHeight:200}}px ">
+<view class="articleIntro" style="background-image: url('{{thumbUrl?thumbUrl:defaultThumb}}');height:{{thumbUrl?thumbHeight:250}}px ">
   <text class="articleTitle">{{title}}</text>
   <view class="detail">
     <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>

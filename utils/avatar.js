@@ -17,6 +17,7 @@ const avatar = {
     'hezhenyu':'hezhenyu-68.png',
     'hongweiwei':'hongweiwei-112.png',
     'huangbangwei':'huangbangwei-65.png',
+    'wangxiaolei':'wangxiaolei-139.png',
     'huangbowen':'huangbowen-46.jpg',
     'huangfengda':'huangfengda-43.png',
     'huhao':'huhao-16.jpg',

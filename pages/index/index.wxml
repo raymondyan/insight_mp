@@ -1,7 +1,7 @@
 <view class='over-panel' style='top:{{topHeight}}px' animation="{{animationDataOfLightChange}}" catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
   <view class='full_category_links'>
     <block wx:for="{{catetories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
-      <view class='category_link'>
+      <view class='category_link' id='{{category.id}}' bindtap='goToCategoryPage'>
         {{category.name}}
       </view>
     </block>
@@ -9,20 +9,19 @@
   </view>
 </view>
 
-
+<view class="navbar {{navTitle?'navbar-opacity':''}}">
+  <view class='navbar_text'>{{navTitle}}</view>
+</view>
 
 <view catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
-
   <view wx:if="{{hideLayer > 0}}" class='over-panel-layer' bindtap='closeFullPicker'></view>
-
-
-  <view class="page_header">
-    洞见 Insights
+  <view class="page_header {{navTitle?'page_header-opacity':''}}">
+    Insights
   </view>
 
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
-      <view class='category_link'>
+      <view class='category_link' id='{{category.id}}' bindtap='goToCategoryPage'>
         {{category.name}}
       </view>
     </block>
