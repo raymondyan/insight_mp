@@ -1,3 +1,4 @@
+
 const app = getApp()
 const { getRecentPost } = require('../../utils/api');
 const { findCategoryNameByIds, categories } = require('../../utils/categories');
@@ -122,5 +123,19 @@ Page({
     this.setData({
       navTitle: title
     })
+  },
+  goToSearch: function(){
+    wx.showModal({
+      title: '提示',
+      content: '搜索功能正在全力开发中, 敬请期待',
+      showCancel: false,
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
-})
+});

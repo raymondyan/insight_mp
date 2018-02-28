@@ -34,6 +34,17 @@ page {
   justify-content: space-between;
 }
 
+.page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutUsIcon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
 .exchange_icon {
   background-color: #1286fe;
   color: white;
@@ -80,7 +91,7 @@ page {
 }
 
 .category_link {
-  font-size: 28rpx;
+  font-size:14px;
   font-weight: 500;
   color: #282828;
   height: 38px;
@@ -121,7 +132,7 @@ page {
 }
 
 .articleBlock .title {
-  padding-left: 3%;
+  padding:0 3%;
   font-size: 36rpx;
   font-weight: 500;
   color: #1a1a1a;

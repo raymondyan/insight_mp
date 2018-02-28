@@ -1,2 +1,36 @@
-<!--pages/categoryPage/categoryPage.wxml-->
-<text>pages/categoryPage/categoryPage.wxml</text>
+<view class="navbar {{navTitle?'navbar-opacity':''}}">
+  <text class='return' bindtap='returnToHome'>首页</text>
+  <view class='navbar_text'>{{navTitle}}</view>
+</view>
+
+<view class="page_header {{navTitle?'page_header-opacity':''}}">
+  {{categoryName}}
+</view>
+
+<view class='post'>
+  <view class='articleBlock' wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}' bindtap='goToArticle'>
+    <view class='categories'>
+      <block wx:for="{{article.categoryName}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
+        <view class='category'>
+          {{category}}
+        </view>
+      </block>
+    </view>
+    <view class="title">
+      <text>{{article.title.rendered}}</text>
+    </view>
+    <image class='articleImage' wx:if="{{article.featured_image_src != null}}" mode="aspectFill" src="{{article.featured_image_src}}"></image>
+    <view class="excerpt">
+      {{article.simpleExcerpt}}
+    </view>
+    <view class="details">
+      <text>{{article.author_name}}</text>
+      <text>·</text>
+      <text>{{article.date}}</text>
+    </view>
+  </view>
+
+  <view style='text-align:center' wx:if="{{isLoading}}">
+    <image style='width:150rpx; height:70rpx;' mode="aspectFill" src="../../img/loading.svg"></image>
+  </view>
+</view>

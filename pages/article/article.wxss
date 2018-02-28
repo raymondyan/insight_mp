@@ -4,6 +4,21 @@ page {
   text-align: justify;
 }
 
+.statusBar-bg {
+  width: 750rpx;
+  height: 20px;
+  background-color: #fff;
+}
+
+.statusBar-bg-fix {
+  position: fixed;
+  top: 0;
+}
+
+.statusBar-bg-fix + .wxParser {
+  padding-top: 20px;
+}
+
 .fullWindowModal {
   position: fixed;
   top: 0;
@@ -46,6 +61,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
   padding-bottom: 20rpx;
 }
 
@@ -68,6 +84,7 @@ page {
   font-size: 30rpx;
   padding-left: 30rpx;
   font-weight: 300;
+  max-width: 70%;
 }
 
 .action-bar {
@@ -82,6 +99,13 @@ page {
   background-color: #f6f8f9;
   border-top: 1rpx solid #ddd;
   z-index: 1000;
+}
+
+.action-bar-area {
+  width: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .action-icon {
@@ -109,10 +133,6 @@ page {
 .body-view {
   width: 80%;
   padding-left: 10%;
-}
-
-.wxParser {
-  padding-bottom: 100rpx;
 }
 
 .wxParser-h1 .wxParserText {
@@ -149,6 +169,11 @@ page {
   /*letter-spacing: 1px;*/
   line-height: 48rpx;
   color: #444;
+  word-break: break-all;
+}
+
+.post-content.wxParserText.wxParser-section {
+  width: 92%;
 }
 
 image {
@@ -197,6 +222,50 @@ image {
   line-height: 38rpx;
 }
 
+.author_block {
+  background-color: #ebebeb;
+  padding: 20px 4%;
+}
+
+.author_card {
+  font-size: 26rpx;
+  background-color: white;
+  padding:20rpx 20rpx;
+  border-radius: 5px;
+  border-top: 5px #0084ff solid;
+  box-shadow: 0px 15px 25px -15px rgba(70,70,70,1);
+}
+
+.profile {
+  display: flex;
+   justify-content: space-between; 
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.profile .profile_name {
+  font-size: 48rpx;
+  font-weight: 600;
+}
+
+.profile image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.author_card .description {
+  font-size:24rpx;
+  line-height:40rpx;
+  color: #666666;
+}
+
+.author_card .company_logo {
+  height: 32rpx;
+  width: 200rpx;
+  padding-top: 30rpx;
+}
+
 button {
   position: relative;
   display: block;
@@ -205,6 +274,19 @@ button {
   line-height: 1em;
   border-radius: 0;
   background-color: transparent;
+}
+
+.comment-number {
+  position: absolute;
+  font-size: 20rpx;
+  height: 20rpx;
+  line-height: 20rpx;
+  color: #fff;
+  background-color: #f95454;
+  padding: 5rpx 10rpx;
+  border-radius: 20rpx;
+  top: -8rpx;
+  left: 90rpx;
 }
 
 button::after {
@@ -227,6 +309,138 @@ button::after {
 
 .hide {
   display: none;
+}
+
+/*comment*/
+
+.comment_header {
+  display: flex;
+  width: 92%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.comment_header .comment {
+  font-size: 60rpx;
+  font-weight: 900;
+  color: #000;
+}
+
+.comment_header .new_comment {
+  padding: 0 10px;
+  color: #0084ff;
+  background: rgba(0, 132, 255, 0.1);
+  height: 60rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 60rpx;
+  border-radius: 12rpx;
+}
+
+.comments {
+  padding-bottom: 100rpx;
+}
+
+.mainComment {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 20px;
+  border-bottom: 1rpx #ebebeb solid;
+}
+
+.mainComment image {
+  height: 54rpx;
+  width: 54rpx;
+}
+
+.mainComment .commentFrom {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainComment .wxParser-blockquote {
+  border-left: 3rpx solid #dbdbdb;
+  margin: 30rpx auto;
+  background-color: #fff;
+  padding: 10rpx 0 10rpx 5rpx;
+}
+
+.mainComment .wxParser-p {
+  padding: 5rpx 0;
+}
+
+.wxParser-br {
+  height: 0;
+}
+
+.mainComment .commentDetail {
+  width: 100%;
+}
+
+.mainComment .authorName {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #1d4682;
+}
+
+.mainComment .pubTime {
+  font-size: 26rpx;
+  color: #bebebe;
+  letter-spacing: 1px;
+}
+
+.mainComment .wxParser {
+  width: 100%;
+  text-align: left;
+  word-break: break-all;
+  padding-bottom: 0;
+}
+
+.mainComment .wxParserText {
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+
+.reply {
+  background-color: #f8f8f8;
+  margin-bottom: 20rpx;
+  border-radius: 10px;
+}
+
+.commentReplyBlock {
+  padding: 20rpx 0;
+  margin: 0 auto;
+  display: flex;
+}
+
+.commentReplyBlock image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.empty_comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60rpx;
+  padding-bottom: 60rpx;
+}
+
+.empty_comment image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.empty_comment view {
+  font-size: 30rpx;
+  color: #bfbfbf;
 }
 
 @font-face {

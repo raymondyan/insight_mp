@@ -1,10 +1,11 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
-		"minified": true
+		"minified": true,
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
@@ -25,7 +26,20 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": 0,
+					"name": "wenzhang",
+					"pathName": "pages/article/article",
+					"query": "aid=6713"
+				},
+				{
+					"id": 1,
+					"name": "dddd",
+					"pathName": "pages/categoryPage/categoryPage",
+					"query": "cid=85"
+				}
+			]
 		}
 	}
 }

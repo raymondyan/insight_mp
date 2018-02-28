@@ -3,26 +3,91 @@
   <image class='loadingGif' src='../../img/loading.gif' mode='aspectFill'></image>
 </view>
 <view class="{{hideLayer === 1 ? 'hidden-layer hide':'hidden-layer'}}" bindtap="closeOtherBar"></view>
-
-<view class="articleIntro" style="background-image: url('{{thumbUrl?thumbUrl:defaultThumb}}');height:{{thumbUrl?thumbHeight:250}}px ">
-  <text class="articleTitle">{{title}}</text>
-  <view class="detail">
-    <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>
-    <text class="authorName">{{author.name}}</text>
-    <text class="articleCategory">分类：{{categories}}</text>
+<view id='article_zone'>
+  <view class="articleIntro" style="background-image: url('{{thumbUrl?thumbUrl:defaultThumb}}');height:{{thumbUrl?thumbHeight:280}}px ">
+    <text class="articleTitle">{{title}}</text>
+    <view class="detail">
+      <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>
+      <text class="authorName">{{author.name}}</text>
+      <!-- <text class="articleCategory">分类：{{categories}}</text> -->
+    </view>
   </view>
-
+  <view class="statusBar-bg {{statusBarBg?'statusBar-bg-fix':''}}"></view>
+  <view class="wxParser">
+    <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
+  </view>
+  <view class='author_block'>
+    <view class='author_card'>
+      <view class='profile'>
+        <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>
+        <view class='profile_name'>{{author.name}}</view>
+      </view>
+      <view class='description'>
+        {{author.description.length > 0 ? author.description : '个人信息待补充' }}
+      </view>
+      <image class='company_logo' src='../../img/tw-logo.png' mode="aspectFill"></image>
+    </view>
+  </view>
 </view>
-<view class="wxParser">
-  <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
+<view class='comments'>
+  <view class='comment_header'>
+    <view class='comment'>评论</view>
+    <view class='new_comment' bindtap="goToComment">发表评论</view>
+  </view>
+  <view class="empty_comment" wx:if="{{comment_number == 0}}">
+    <image src="../../img/empty.png"></image>
+    <view>在这个星球留下第一个足迹</view>
+  </view>
+  <view class='commentBlock' wx:for="{{comments}}" wx:key="idx" wx:for-index="idx" wx:for-item="comment">
+    <view class='mainComment'>
+      <view class='authorImg'>
+        <image src='../../img/avatar.png' mode='aspectFill'></image>
+      </view>
+      <view class='commentDetail'>
+        <view class='commentFrom'>
+          <view class="authorName">{{comment.author_name}}</view>
+          <view class="pubTime">{{comment.hommizationTime}}</view>
+        </view>
+        <view class="wxParser">
+          <template is="wxParser" data="{{wxParserData:comment.comment.nodes}}" />
+        </view>
+        <view class='reply'>
+          <block wx:for="{{comment.children}}" wx:key="idx" wx:for-index="idx" wx:for-item="reply">
+            <view class='commentReplyBlock'>
+              <view class='commentDetail'>
+                <view class='commentFrom'>
+                  <view class="authorName">{{reply.author_name}}</view>
+                  <view class="pubTime">{{reply.hommizationTime}}</view>
+                </view>
+                <view class="wxParser">
+                  <template is="wxParser" data="{{wxParserData:reply.comment.nodes}}" />
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
 <view class="action-bar">
-  <image class="action-icon" src="../../img/back.png" mode="aspectFit" bindtap="goBack"></image>
-  <button open-type="share">
+  <view wx:if="{{isFromShare}}" class='action-bar-area' bindtap="goHome">
+    <image class="action-icon" src="../../img/home.png" mode="aspectFit"></image>
+  </view>
+  <view wx:else class='action-bar-area' bindtap="goBack">
+    <image class="action-icon" src="../../img/back.png" mode="aspectFit"></image>
+  </view>
+  <button open-type="share" class='action-bar-area'>
     <image class="action-icon" src="../../img/forward.png" mode="aspectFit" plain="true"></image>
   </button>
-  <image class="action-icon" src="../../img/comment.png" mode="aspectFit"></image>
-  <image class="action-icon" src="../../img/more.png" mode="aspectFit" bindtap="callLightChange"></image>
+  <view class='action-bar-area' bindtap='jumpToComment' style='position:relative'>
+    <image class="action-icon" src="../../img/comment.png" mode="aspectFit"></image>
+    <view class="comment-number">{{comment_number}}</view>
+  </view>
+  <view class='action-bar-area' bindtap="callLightChange">
+    <image class="action-icon" src="../../img/more.png" mode="aspectFit"></image>
+  </view>
+
 </view>
 <view class="light-change" animation="{{animationDataOfLightChange}}">
   <view class="light-change-tips">

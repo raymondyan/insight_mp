@@ -16,9 +16,12 @@
 <view catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
   <view wx:if="{{hideLayer > 0}}" class='over-panel-layer' bindtap='closeFullPicker'></view>
   <view class="page_header {{navTitle?'page_header-opacity':''}}">
+  <view>
     Insights
   </view>
-
+  <image class="aboutUsIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
+  </view>
+  
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
       <view class='category_link' id='{{category.id}}' bindtap='goToCategoryPage'>

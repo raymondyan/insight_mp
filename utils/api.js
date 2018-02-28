@@ -1,4 +1,4 @@
-const HOST = "http://insight-dev.thoughtworks.cn/wp-json"
+const HOST = "https://insight-dev.thoughtworks.cn/wp-json"
 
 function getURL(api) {
   return HOST + api;
@@ -9,7 +9,7 @@ function getCategories() {
 }
 
 function getArticleByCategoryId(categoryId, pageNum) {
-  return getURL('/wp/v2/posts?categories=' + categoryId + '&orderby=date&order=desc&context=embed&per_page=5&page=' + pageNum);
+  return getURL('/wp/v2/posts?categories=' + categoryId + '&orderby=date&order=desc&context=view&page=' + pageNum);
 }
 
 function getArticleThumb(mediaId) {
@@ -32,6 +32,11 @@ function getRecentPost(pageNum) {
   return getURL('/wp/v2/posts?orderby=date&order=desc&context=view&per_page=8&page=' + pageNum)
 }
 
+function getComment(postId) {
+  return getURL('/wp/v2/comments?status=approve&orderby=date&order=desc&context=view&per_page=100&page=1&post=' + postId)
+}
+
+
 module.exports = {
   getCategories: getCategories,
   getArticleByCategoryId: getArticleByCategoryId,
@@ -39,5 +44,6 @@ module.exports = {
   getArticle: getArticle,
   getUser: getUser,
   getRelatedCategories: getRelatedCategories,
-  getRecentPost: getRecentPost
+  getRecentPost: getRecentPost,
+  getComment: getComment
 };
