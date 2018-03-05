@@ -15,16 +15,17 @@ Page({
     hideLayer: -1,
     pageNum: 1,
     animationOfCategoryPicker: {},
+    fullPickerPaddingTop: app.globalData.statusBarHeight + 45
   },
   onLoad: function () {
     let scope = this
     scope.recentPost(scope.data.pageNum)
     var quickCategories = categories.slice(0, 5)
-    let fullPickerHeight = (90 + Math.ceil(categories.length / 3) * 48) * -1
+    let fullPickerHeight = (app.globalData.statusBarHeight + 70 + Math.ceil((categories.length + 1) / 3) * 48) * -1
     scope.setData({
       pageNum: scope.data.pageNum + 1,
       catetories: categories,
-      quickCategories: quickCategories, 
+      quickCategories: quickCategories,
       translateH: fullPickerHeight,
       topHeight: fullPickerHeight
     })
@@ -37,7 +38,7 @@ Page({
     } else {
       scope.setNav("")
     }
-    if (O.scrollTop > 160.5) {
+    if (O.scrollTop > 190.5) {
       scope.setData({
         isFixedToTop: true
       })
@@ -106,7 +107,7 @@ Page({
       pageNum: scope.data.pageNum + 1
     })
   },
-  goToArticle: function(e){
+  goToArticle: function (e) {
     wx.navigateTo({
       url: '../article/article?aid=' + e.currentTarget.id
     })
@@ -115,8 +116,8 @@ Page({
     wx.navigateTo({
       url: '../categoryPage/categoryPage?cid=' + e.currentTarget.id
     })
-    if (this.data.hideLayer === 1){
-      this.callFullPicker()    
+    if (this.data.hideLayer === 1) {
+      this.callFullPicker()
     }
   },
   setNav: function (title) {
@@ -124,18 +125,9 @@ Page({
       navTitle: title
     })
   },
-  goToSearch: function(){
-    wx.showModal({
-      title: '提示',
-      content: '搜索功能正在全力开发中, 敬请期待',
-      showCancel: false,
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
+  goToSearch: function () {
+    wx.navigateTo({
+      url: '../search/search',
     })
   }
 });

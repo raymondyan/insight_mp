@@ -9,7 +9,8 @@ Page({
     pageNum: 1,
     articleList: [],
     isLoading: true,
-    isAllLoaded: false
+    isAllLoaded: false,
+    fullPickerPaddingTop: app.globalData.statusBarHeight + 45
   },
   onLoad: function (options) {
     let scope = this

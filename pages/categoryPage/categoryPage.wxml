@@ -1,9 +1,9 @@
-<view class="navbar {{navTitle?'navbar-opacity':''}}">
-  <text class='return' bindtap='returnToHome'>首页</text>
+<view class="navbar {{navTitle?'navbar-opacity':''}}" style='height:{{fullPickerPaddingTop}}px'>
+  <text class='return' bindtap='returnToHome'>◀︎</text>
   <view class='navbar_text'>{{navTitle}}</view>
 </view>
 
-<view class="page_header {{navTitle?'page_header-opacity':''}}">
+<view class="page_header {{navTitle?'page_header-opacity':''}}" style='padding-top:{{fullPickerPaddingTop}}px'>
   {{categoryName}}
 </view>
 

@@ -1,12 +1,16 @@
 App({
   onLaunch: function () {
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    let scope = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        scope.globalData.statusBarHeight = res.statusBarHeight || res.statusbarHeight
+        scope.globalData.windowHeight = res.windowHeight
       }
     })
-    // 获取用户信息
+    wx.login({
+      success: res => {
+      }
+    })
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

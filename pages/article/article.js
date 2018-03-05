@@ -11,6 +11,7 @@ Page({
         translateH: 95,
         showLoading: true,
         hideLayer: 1,
+        statusBarBackgroundHeight: app.globalData.statusBarHeight,
         defaultThumb: "https://dynamic.thoughtworks.com/homepage/background_image-64d5209f7ec217f9e95e17ed99b44278.png"
     },
     onPageScroll: function (O) {

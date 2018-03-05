@@ -1,0 +1,38 @@
+<view class='box_bg' style="height:{{ bgHeight }}px">
+  <view class='return' bindtap='returnToHome'>◀︎</view>
+</view>
+<view class="search_box" style="top:{{ inputToTop }}px">
+  <input class='search_input' value="{{keyword}}" bindinput='updateKeyword' bindconfirm='search' placeholder="搜索您感兴趣的..." confirm-type="search" />
+</view>
+
+<image class='search_icon' bindtap='search' style='top:{{searchIconTop}}px' src='../../img/search-grey.png'></image>
+
+<view class='content_view' style='padding-top:{{contentTop}}px'>
+  <view wx:if='{{articles.length > 0}}' class="articles_list">
+    <scroll-view scroll-y style="height: {{scrollHeight}}px;" scroll-top="{{scrollToTop}}">
+      <block wx:for="{{articles}}" wx:for-item="article" wx:key="idx" wx:for-index="idx">
+        <navigator url="../article/article?aid={{article.id}}" hover-class="navigator-hover">
+          <view class="article-link">
+            <view class="article-navigator">{{article.title.rendered}}
+              <view class="article_description">
+                <text class="author">{{article.author_name}}</text>
+                <text class="date">{{article.date}}</text>
+              </view>
+            </view>
+            <view class="link-icon"></view>
+          </view>
+        </navigator>
+      </block>
+    </scroll-view>
+  </view>
+  <view wx:else>
+    <view class='hot_tag'>热门标签</view>
+    <view class='tags'>
+      <block wx:for="{{tags}}" wx:key="idx" wx:for-index="idx" wx:for-item="tag">
+        <view class='tag' id='{{tag.id}}' data-tag='{{tag.name}}' bindtap='quickSearchTag'>
+          {{tag.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

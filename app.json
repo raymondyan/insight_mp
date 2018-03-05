@@ -2,7 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/article/article",
-    "pages/categoryPage/categoryPage"
+    "pages/categoryPage/categoryPage",
+    "pages/search/search",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",

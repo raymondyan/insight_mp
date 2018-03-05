@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
-	"appid": "wx390c20c60885239b",
-	"projectname": "Insight_newUI",
+	"libVersion": "1.9.91",
+	"appid": "wx6ac335896f1078f1",
+	"projectname": "Insight_release",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -38,6 +38,18 @@
 					"name": "dddd",
 					"pathName": "pages/categoryPage/categoryPage",
 					"query": "cid=85"
+				},
+				{
+					"id": 2,
+					"name": "search",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/about/about",
+					"query": ""
 				}
 			]
 		}

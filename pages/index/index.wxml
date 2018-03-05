@@ -1,5 +1,5 @@
 <view class='over-panel' style='top:{{topHeight}}px' animation="{{animationDataOfLightChange}}" catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
-  <view class='full_category_links'>
+  <view class='full_category_links' style='padding-top:{{fullPickerPaddingTop}}px;'>
     <block wx:for="{{catetories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
       <view class='category_link' id='{{category.id}}' bindtap='goToCategoryPage'>
         {{category.name}}
@@ -9,19 +9,23 @@
   </view>
 </view>
 
-<view class="navbar {{navTitle?'navbar-opacity':''}}">
+<view class="navbar {{navTitle?'navbar-opacity':''}}" style='height:{{fullPickerPaddingTop}}px'>
   <view class='navbar_text'>{{navTitle}}</view>
 </view>
 
+<view></view>
+
 <view catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
   <view wx:if="{{hideLayer > 0}}" class='over-panel-layer' bindtap='closeFullPicker'></view>
-  <view class="page_header {{navTitle?'page_header-opacity':''}}">
-  <view>
-    Insights
+  <view class="page_header {{navTitle?'page_header-opacity':''}}" style='padding-top:{{fullPickerPaddingTop}}px'>
+    <view>
+      Insights
+    </view>
+    <image class="searchIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
   </view>
-  <image class="aboutUsIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
-  </view>
-  
+
+  <navigator class='aboutUs' url="../about/about" >关于洞见 ▸ </navigator>
+
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
       <view class='category_link' id='{{category.id}}' bindtap='goToCategoryPage'>
@@ -33,7 +37,7 @@
 
 
 
-  <view class="common_header {{isFixedToTop?'fixed':''}}">
+  <view class="common_header {{isFixedToTop?'fixed':''}}" style='{{isFixedToTop?"top:"+fullPickerPaddingTop+"px":""}}'>
     <view>
       近期洞见
     </view>

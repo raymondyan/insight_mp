@@ -1,4 +1,4 @@
-const categories =
+const categories = 
   [
     {
       "id": 84,
@@ -79,7 +79,6 @@ const categories =
       "id": 606,
       "name": "BSI",
       "slug": "bsi",
-
     },
     {
       "id": 82,
@@ -144,13 +143,16 @@ const categories =
       "id": 615,
       "name": "组织运营变革",
       "slug": "%e7%bb%84%e7%bb%87%e8%bf%90%e8%90%a5%e5%8f%98%e9%9d%a9",
-
+    },
+    {
+      "id": 682,
+      "name": "产品团队赋能",
+      "slug": "%e4%ba%a7%e5%93%81%e5%9b%a2%e9%98%9f%e8%b5%8b%e8%83%bd",
     },
     {
       "id": 1,
       "name": "未分类",
       "slug": "uncategorized",
-
     }
   ]
 
@@ -158,7 +160,10 @@ function findCategoryNameById(id) {
   function isThatCategory(element) {
     return element.id == id
   }
-  return categories.find(isThatCategory).name
+  var category = categories.find(isThatCategory)
+  if (category){
+    return category.name
+  }
 }
 
 function findCategoryNameByIds(ids) {
@@ -166,7 +171,10 @@ function findCategoryNameByIds(ids) {
   ids.forEach(
     function convert(id){
       if(id!= 1){
-        result.push(findCategoryNameById(id))
+        var categoryName = findCategoryNameById(id)
+        if (categoryName){
+          result.push(findCategoryNameById(id))
+        }
       }
     }
   )

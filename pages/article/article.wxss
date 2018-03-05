@@ -6,7 +6,6 @@ page {
 
 .statusBar-bg {
   width: 750rpx;
-  height: 20px;
   background-color: #fff;
 }
 
@@ -188,7 +187,21 @@ image {
   display: inline;
 }
 
+.wxParser > .wxParser-ul .wxParser-code {
+  display: inline;
+}
+
 .wxParser  > .wxParser-p .wxParser-code .wxParserText {
+  font-size: 24rpx;
+  color: #24292e;
+  line-height: 1em;
+  background-color: rgba(27, 31, 35, 0.25);
+  padding: 2rpx 6rpx;
+  margin: 0 4rpx;
+  border-radius: 5rpx;
+}
+
+.wxParser  > .wxParser-ul .wxParser-code .wxParserText {
   font-size: 24rpx;
   color: #24292e;
   line-height: 1em;

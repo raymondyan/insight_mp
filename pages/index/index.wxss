@@ -1,14 +1,9 @@
-page {
-  padding-top: 65px;
-}
-
 .navbar {
   background-color: #FFF;
   position: fixed;
   z-index: 1002;
   top: 0;
   width: 750rpx;
-  height: 65px;
   text-align: center;
   overflow: hidden;
 }
@@ -22,7 +17,9 @@ page {
   font-size: 19px;
   color: #000;
   font-weight: 500;
-  padding-top: 30px;
+  position: absolute;
+  bottom: 10px;
+  width: 750rpx;
 }
 
 .articleBlock {
@@ -40,9 +37,19 @@ page {
   align-items: center;
 }
 
-.aboutUsIcon {
+.searchIcon {
   width: 64rpx;
   height: 64rpx;
+}
+
+.aboutUs {
+  padding: 0;  
+  padding-left: 22.5rpx;
+  height: 30px;
+  line-height: 30px;
+  color: #1286fe;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .exchange_icon {
@@ -71,7 +78,6 @@ page {
 }
 
 .full_category_links {
-  padding-top: 65px;
   padding-bottom: 20px;
 }
 
@@ -106,7 +112,6 @@ page {
 .fixed {
   position: fixed;
   z-index: 1001;
-  top: 65px;
   border-bottom: 1rpx solid #ebebeb;
   background-color:hsla(0,0%,100%,.98);
 }

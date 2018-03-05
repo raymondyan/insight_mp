@@ -9,11 +9,10 @@
     <view class="detail">
       <image class="authorAvatar" src="{{authorAvatar?authorAvatar:author.avatar_urls['96']}}" mode="aspectFill"></image>
       <text class="authorName">{{author.name}}</text>
-      <!-- <text class="articleCategory">分类：{{categories}}</text> -->
     </view>
   </view>
-  <view class="statusBar-bg {{statusBarBg?'statusBar-bg-fix':''}}"></view>
-  <view class="wxParser">
+  <view class="statusBar-bg {{statusBarBg?'statusBar-bg-fix':''}}" style='height:{{statusBarBackgroundHeight}}px'></view>
+  <view class="wxParser" style='{{statusBarBg?"padding-top:"+statusBarBackgroundHeight+"px":""}}'>
     <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
   </view>
   <view class='author_block'>
