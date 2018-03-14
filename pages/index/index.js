@@ -107,11 +107,6 @@ Page({
       pageNum: scope.data.pageNum + 1
     })
   },
-  goToArticle: function (e) {
-    wx.navigateTo({
-      url: '../article/article?aid=' + e.currentTarget.id
-    })
-  },
   goToCategoryPage: function (e) {
     wx.navigateTo({
       url: '../categoryPage/categoryPage?cid=' + e.currentTarget.id

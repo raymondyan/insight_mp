@@ -8,10 +8,11 @@ const codeTransformation = require('../../wxParser/codeTransformation');
 Page({
     data: {
         animationDataOfLightChange: {},
-        translateH: 95,
+        translateH: 95 + (app.globalData.isIPhoneX ? 34 : 0),
         showLoading: true,
         hideLayer: 1,
         statusBarBackgroundHeight: app.globalData.statusBarHeight,
+        isPhoneX: app.globalData.isIPhoneX,
         defaultThumb: "https://dynamic.thoughtworks.com/homepage/background_image-64d5209f7ec217f9e95e17ed99b44278.png"
     },
     onPageScroll: function (O) {
@@ -49,7 +50,7 @@ Page({
         wx.getSystemInfo({
             success: function (res) {
                 scope.setData({
-                    thumbHeight: res.windowHeight - 40,
+                  thumbHeight: res.windowHeight - 40 - (app.globalData.isIPhoneX ? 34 : 0),
                     fullWindowHeight: res.windowHeight
                 })
             }
@@ -160,6 +161,9 @@ Page({
 
     callLightChange: function () {
         let scope = this
+        wx.setClipboardData({
+          data: 'pages/article/article?aid=' + scope.data.articleId + "&share=true"
+        })
         var animation = wx.createAnimation({
             duration: 300,
             timingFunction: 'ease-in-out',
@@ -181,17 +185,9 @@ Page({
 
     },
     goToComment: function () {
-        wx.showModal({
-            title: '提示',
-            content: '评论功能正在全力开发中, 敬请期待',
-            showCancel: false,
-            success: function (res) {
-                if (res.confirm) {
-                    console.log('用户点击确定')
-                } else if (res.cancel) {
-                    console.log('用户点击取消')
-                }
-            }
+      let scope = this;
+        wx.navigateTo({
+          url: '../comment/comment?id=' + scope.data.articleId,
         })
     },
     jumpToComment: function () {

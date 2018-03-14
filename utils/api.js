@@ -44,6 +44,10 @@ function getComment(postId) {
   return getURL('/wp/v2/comments?status=approve&orderby=date&order=desc&context=view&per_page=100&page=1&post=' + postId)
 }
 
+function postComment(nickName, avatarUrl, comment, articleId) {
+  return getURL('/wp/v2/comments?author_name=' + nickName + '&author_url=' + avatarUrl + '&author_email=wxapp@wechat.qq.com&content=' + comment + '&post=' + articleId)
+}
+
 
 module.exports = {
   getCategories: getCategories,
@@ -55,5 +59,6 @@ module.exports = {
   getRelatedCategories: getRelatedCategories,
   getRecentPost: getRecentPost,
   getComment: getComment,
-  searchPosts: searchPosts
+  searchPosts: searchPosts,
+  postComment: postComment
 };

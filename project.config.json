@@ -31,7 +31,7 @@
 					"id": 0,
 					"name": "wenzhang",
 					"pathName": "pages/article/article",
-					"query": "aid=6713"
+					"query": "aid=3582"
 				},
 				{
 					"id": 1,
@@ -50,6 +50,12 @@
 					"name": "about",
 					"pathName": "pages/about/about",
 					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "comment",
+					"pathName": "pages/comment/comment",
+					"query": "id=6821"
 				}
 			]
 		}

@@ -1,0 +1,62 @@
+page {
+  background-color: #f6f6f6;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  width: 750rpx;
+  height: 65px;
+  text-align: center;
+  overflow: hidden;
+  background-color:hsla(0,0%,98%,.97);
+  border-bottom: 1rpx solid #ebebeb; 
+}
+
+.navbar_text {
+  font-size: 19px;
+  color: #000;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  width: 750rpx;
+}
+
+.return {
+  position: absolute;
+  z-index: 1002;
+  bottom:10px;
+  font-size: 18px;
+  color: #118eea;
+  left: 4%;
+}
+
+.article_title {
+  padding: 0 3%;
+  font-size: 42rpx;
+  font-weight: 400;
+  color: #222;
+}
+
+.comment {
+  padding-top: 20px;
+}
+
+.comment_box {
+  background-color: #FFF;
+   width: 94%; 
+  height: 250rpx;
+  padding: 10rpx 3%;
+}
+
+.confirm_comment {
+  width: 94%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;  
+  color: white;
+}

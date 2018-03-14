@@ -1,0 +1,16 @@
+<view class="navbar" style='height:{{paddingTop}}px'>
+  <view class='return' bindtap='returnToHome'>取消</view>
+  <view class='navbar_text'>评论</view>
+</view>
+
+<view class='article_title' style='padding-top:{{paddingTop + 20}}px'>
+  {{title}}
+</view>
+
+<view class="comment">
+  <textarea maxlength='-1' bindinput="commentInputing" value='{{comment}}' class="comment_box" show-confirm-bar='false'  placeholder="在此处留下您的想法，留言将由管理员审核后显示" />
+</view>
+
+<view class='confirm_comment' style="background-color:{{ comment.length > 0? '#1286fe':'#b6d9fe' }}" bindtap='createComment'>
+  提交
+</view>

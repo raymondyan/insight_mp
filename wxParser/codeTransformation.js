@@ -2,6 +2,8 @@
  * 特殊字符映射表
  * @type {Object}
  */
+const hiddenChar = " *** "
+
 const codeMap = {
   // HTML 支持的数学符号
   '&forall;': '∀',
@@ -484,6 +486,13 @@ const codeMap = {
   '&clubs;': '♣',
   '&hearts;': '♥',
   '&diams;': '♦',
+
+  // 敏感词去敏感
+  '以太坊': hiddenChar,
+  '比特币': hiddenChar,
+  '虚拟货币': hiddenChar,
+  '虚拟交易': hiddenChar,
+  'BitCoin': hiddenChar
 };
 
 /**

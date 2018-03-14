@@ -5,6 +5,7 @@ App({
       success: function (res) {
         scope.globalData.statusBarHeight = res.statusBarHeight || res.statusbarHeight
         scope.globalData.windowHeight = res.windowHeight
+        scope.globalData.isIPhoneX = res.model.indexOf("iPhone X") != -1
       }
     })
     wx.login({

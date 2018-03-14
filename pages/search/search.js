@@ -2,6 +2,17 @@ const app = getApp()
 const { formatTime } = require('../../utils/util')
 const codeTransformation = require('../../wxParser/codeTransformation');
 const { getTags, searchPosts } = require('../../utils/api');
+
+const sensitiveWords = [
+  "区块链",
+  "比特币",
+  "币",
+  "比特",
+  "虚拟货币",
+  "虚拟交易",
+  "BitCoin"
+]
+
 Page({
 
   data: {
@@ -53,6 +64,24 @@ Page({
   },
   searchArticle: function (keyword) {
     let scope = this;
+    var hasSensitiveWord = false
+    sensitiveWords.forEach(
+      function hexie(word){
+        if (keyword.indexOf(word) != -1){
+          hasSensitiveWord = true
+        }
+      }
+    )
+
+    if (hasSensitiveWord){
+      wx.showModal({
+        title: '提示',
+        content: '包含微信小程序尚不支持的业务关键词',
+        showCancel: false
+      })
+      return 0
+    }
+    
     if (keyword) {
       app.wxRequest(searchPosts(keyword), 'GET').then((res) => {
         if (res.data) {

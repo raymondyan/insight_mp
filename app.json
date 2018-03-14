@@ -4,7 +4,8 @@
     "pages/article/article",
     "pages/categoryPage/categoryPage",
     "pages/search/search",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/comment/comment"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -42,7 +42,7 @@ Page({
             items.title = {
               rendered: codeTransformation.transform(item.title.rendered)
             }
-            items.simpleExcerpt = item.excerpt.rendered.replace(/<[^>]+>/g, "").replace("\n", "")
+            items.simpleExcerpt = codeTransformation.transform(item.excerpt.rendered.replace(/<[^>]+>/g, "").replace("\n", ""))
             items.date = formatTime(new Date(item.date))
             items.categoryName = findCategoryNameByIds(item.categories)
             items.featured_image_src = item.featured_image_src
@@ -80,12 +80,6 @@ Page({
       pageNum: scope.data.pageNum + 1
     })
   }, 
-  
-  goToArticle: function (e) {
-    wx.navigateTo({
-      url: '../article/article?aid=' + e.currentTarget.id
-    })
-  },
   returnToHome: function(){
     wx.navigateBack({
       delta: 1

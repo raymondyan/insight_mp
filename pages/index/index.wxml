@@ -47,7 +47,7 @@
   </view>
 
   <view class='recent_post'>
-    <view class='articleBlock' wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}' bindtap='goToArticle'>
+    <navigator url="../article/article?aid={{article.id}}" class='articleBlock' hover-stay-time="300" wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}'>
       <view class='categories'>
         <block wx:for="{{article.categoryName}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
           <view class='category'>
@@ -67,7 +67,7 @@
         <text>·</text>
         <text>{{article.date}}</text>
       </view>
-    </view>
+    </navigator>
 
     <view style='text-align:center' wx:if="{{isLoading}}">
       <image style='width:150rpx; height:70rpx;' mode="aspectFill" src="../../img/loading.svg"></image>

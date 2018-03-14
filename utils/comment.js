@@ -15,6 +15,9 @@ const parseComment = (comments) => R.compose(
     return R.assoc('hommizationTime', hommizationTime(comment.date))(comment)
   }),
   R.map(comment => {
+    return R.assoc('isFromMA', comment.author_url.indexOf("wx.qlogo.cn") != -1 )(comment)
+  }),
+  R.map(comment => {
     return R.assoc('comment', parseHTML(comment.content.rendered))(comment)
   }),
   R.map(R.omit(['author_avatar_urls', 'date_gmt', 'meta', 'post', 'status', 'type', '_links', 'link']))

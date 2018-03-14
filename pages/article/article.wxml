@@ -40,7 +40,7 @@
   <view class='commentBlock' wx:for="{{comments}}" wx:key="idx" wx:for-index="idx" wx:for-item="comment">
     <view class='mainComment'>
       <view class='authorImg'>
-        <image src='../../img/avatar.png' mode='aspectFill'></image>
+        <image src='{{comment.isFromMA ? comment.author_url : ".../../img/avatar.png"}}' mode='aspectFill'></image>
       </view>
       <view class='commentDetail'>
         <view class='commentFrom'>
@@ -69,7 +69,7 @@
     </view>
   </view>
 </view>
-<view class="action-bar">
+<view class="action-bar {{isPhoneX?'phoneX':''}}">
   <view wx:if="{{isFromShare}}" class='action-bar-area' bindtap="goHome">
     <image class="action-icon" src="../../img/home.png" mode="aspectFit"></image>
   </view>
@@ -86,8 +86,8 @@
   <view class='action-bar-area' bindtap="callLightChange">
     <image class="action-icon" src="../../img/more.png" mode="aspectFit"></image>
   </view>
-
 </view>
+<view wx:if="{{isPhoneX}}" class='phoneXDangerZone'></view>
 <view class="light-change" animation="{{animationDataOfLightChange}}">
   <view class="light-change-tips">
     <text>调节亮度</text>

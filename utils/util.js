@@ -52,7 +52,12 @@ function hommizationTime(date) {
   return result;
 }
 
+function remove_emoji(str) {
+  return unescape(escape(str).replace(/\%uD.{3}/g, ''));
+}
+
 module.exports = {
   formatTime: formatTime,
-  hommizationTime: hommizationTime
+  hommizationTime: hommizationTime,
+  remove_emoji: remove_emoji
 }

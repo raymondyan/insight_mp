@@ -97,7 +97,20 @@ page {
   align-items: center;
   background-color: #f6f8f9;
   border-top: 1rpx solid #ddd;
-  z-index: 1000;
+  z-index: 1004;
+}
+
+.phoneX {
+  bottom: 34px;
+}
+
+.phoneXDangerZone {
+  position: fixed;
+  width: 750rpx;
+  height: 40px;
+  bottom: 0;
+  background-color: #f6f8f9;
+  z-index: 1003;
 }
 
 .action-bar-area {
@@ -367,6 +380,7 @@ button::after {
 .mainComment image {
   height: 54rpx;
   width: 54rpx;
+  border-radius:50%
 }
 
 .mainComment .commentFrom {
