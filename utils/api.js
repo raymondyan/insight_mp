@@ -1,4 +1,4 @@
-const HOST = "https://insight-dev.thoughtworks.cn/wp-json"
+const HOST = "https://insights.thoughtworks.cn/wp-json"
 
 function getURL(api) {
   return HOST + api;
@@ -44,8 +44,8 @@ function getComment(postId) {
   return getURL('/wp/v2/comments?status=approve&orderby=date&order=desc&context=view&per_page=100&page=1&post=' + postId)
 }
 
-function postComment(nickName, avatarUrl, comment, articleId) {
-  return getURL('/wp/v2/comments?author_name=' + nickName + '&author_url=' + avatarUrl + '&author_email=wxapp@wechat.qq.com&content=' + comment + '&post=' + articleId)
+function postComment() {
+  return getURL('/wp/v2/comments?a=1')
 }
 
 

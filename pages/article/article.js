@@ -13,6 +13,7 @@ Page({
         hideLayer: 1,
         statusBarBackgroundHeight: app.globalData.statusBarHeight,
         isPhoneX: app.globalData.isIPhoneX,
+        isAndroid: app.globalData.isAndroid,
         defaultThumb: "https://dynamic.thoughtworks.com/homepage/background_image-64d5209f7ec217f9e95e17ed99b44278.png"
     },
     onPageScroll: function (O) {
@@ -194,7 +195,6 @@ Page({
         wx.createSelectorQuery().select('#article_zone').fields({
             size: true,
         }, function (res) {
-            console.log(res)
             wx.pageScrollTo({
                 scrollTop: res.height,
                 duration: 300

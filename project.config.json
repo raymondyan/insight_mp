@@ -1,14 +1,14 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "2.0.8",
 	"appid": "wx6ac335896f1078f1",
 	"projectname": "Insight_release",
 	"condition": {
@@ -20,18 +20,22 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
 					"name": "wenzhang",
 					"pathName": "pages/article/article",
-					"query": "aid=3582"
+					"query": "aid=6584"
 				},
 				{
 					"id": 1,
@@ -56,6 +60,11 @@
 					"name": "comment",
 					"pathName": "pages/comment/comment",
 					"query": "id=6821"
+				},
+				{
+					"id": -1,
+					"name": "ss",
+					"pathName": "pages/eventAgenda/eventAgenda"
 				}
 			]
 		}

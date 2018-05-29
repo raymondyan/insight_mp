@@ -20,7 +20,7 @@ const parseComment = (comments) => R.compose(
   R.map(comment => {
     return R.assoc('comment', parseHTML(comment.content.rendered))(comment)
   }),
-  R.map(R.omit(['author_avatar_urls', 'date_gmt', 'meta', 'post', 'status', 'type', '_links', 'link']))
+  R.map(R.omit(['date_gmt', 'meta', 'post', 'status', 'type', '_links', 'link']))
 )(comments);
 
 const structureComments = (comments) => {

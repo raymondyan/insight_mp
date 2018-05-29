@@ -5,7 +5,7 @@ const { findCategoryNameByIds, categories } = require('../../utils/categories');
 const R = require('../../utils/ramda.js');
 const { formatTime } = require('../../utils/util')
 const codeTransformation = require('../../wxParser/codeTransformation');
-let pageTitle = "Insights"
+let pageTitle = "ThoughtWorks 洞见"
 
 Page({
   data: {

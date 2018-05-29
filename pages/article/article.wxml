@@ -40,7 +40,9 @@
   <view class='commentBlock' wx:for="{{comments}}" wx:key="idx" wx:for-index="idx" wx:for-item="comment">
     <view class='mainComment'>
       <view class='authorImg'>
-        <image src='{{comment.isFromMA ? comment.author_url : ".../../img/avatar.png"}}' mode='aspectFill'></image>
+        <image wx:if="{{comment.isFromMA}}" src='{{comment.author_url}}' mode='aspectFill'></image>
+        <image wx:elif="{{comment.author_avatar_urls}}" src='{{comment.author_avatar_urls["48"]}}' mode='aspectFill'></image>
+        <image wx:else src='../../img/avatar.png' mode='aspectFill'></image>
       </view>
       <view class='commentDetail'>
         <view class='commentFrom'>

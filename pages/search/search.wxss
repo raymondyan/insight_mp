@@ -16,7 +16,7 @@ page {
   bottom:48px;
   font-size: 19px;
   color: white;
-  left: 4%;
+  padding:0 4%;
 }
 
 

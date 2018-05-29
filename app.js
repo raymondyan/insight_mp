@@ -1,11 +1,15 @@
 App({
   onLaunch: function () {
     let scope = this;
+    require('utils/sdk-v1.3.0');
+    let clientID = 'e88f19721e83348a7c4c';
+    wx.BaaS.init(clientID);
     wx.getSystemInfo({
       success: function (res) {
         scope.globalData.statusBarHeight = res.statusBarHeight || res.statusbarHeight
         scope.globalData.windowHeight = res.windowHeight
         scope.globalData.isIPhoneX = res.model.indexOf("iPhone X") != -1
+        scope.globalData.isAndroid = res.system.indexOf("Android") != -1
       }
     })
     wx.login({

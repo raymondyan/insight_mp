@@ -19,12 +19,12 @@
   <view wx:if="{{hideLayer > 0}}" class='over-panel-layer' bindtap='closeFullPicker'></view>
   <view class="page_header {{navTitle?'page_header-opacity':''}}" style='padding-top:{{fullPickerPaddingTop}}px'>
     <view>
-      Insights
+      ThoughtWorks 洞见
     </view>
     <image class="searchIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
   </view>
 
-  <navigator class='aboutUs' url="../about/about" >关于洞见 ▸ </navigator>
+  <navigator class='aboutUs' url="../about/about" >关于我们 ▸ </navigator>
 
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
@@ -37,15 +37,15 @@
 
 
 
-  <view class="common_header {{isFixedToTop?'fixed':''}}" style='{{isFixedToTop?"top:"+fullPickerPaddingTop+"px":""}}'>
+  <!-- <view class="common_header {{isFixedToTop?'fixed':''}}" style='{{isFixedToTop?"top:"+fullPickerPaddingTop+"px":""}}'>
     <view>
       近期洞见
     </view>
     <view wx:if="{{isFixedToTop}}" class='exchange_icon' bindtap='callFullPicker'>
       切换分类
     </view>
-  </view>
-
+  </view> -->
+ <image class='eventImage' src='../../img/techradar.png' mode='widthFix'/>
   <view class='recent_post'>
     <navigator url="../article/article?aid={{article.id}}" class='articleBlock' hover-stay-time="300" wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}'>
       <view class='categories'>

@@ -13,6 +13,9 @@ Page({
       articleId: parseInt(options.id),
     })
     scope.queryArticle(options.id)
+  },
+  onShow: function () {
+    let scope = this;
     wx.getSetting({
       success(res) {
         if (!res.authSetting['scope.userInfo']) {
@@ -83,7 +86,7 @@ Page({
   },
   commentInputing: function (e) {
     this.setData({
-      comment: remove_emoji(e.detail.value)
+      comment: e.detail.value
     })
   },
   returnToHome: function () {
@@ -109,8 +112,10 @@ Page({
       })
     }
   },
+
   createComment: function () {
-    var data = this.data;
+    let scope = this;
+    var data = scope.data;
     let nickName = data.nickName;
     let avatarUrl = data.avatarUrl;
     let comment = data.comment;
@@ -118,22 +123,29 @@ Page({
       return 0
     }
     let articleId = data.articleId;
-    app.wxRequest(postComment(remove_emoji(nickName), avatarUrl, comment, articleId), 'POST').then((res) => {
-      if (res.statusCode === 201) {
-        wx.showToast({
-          title: '提交成功',
-          icon: 'success',
-          duration: 2000,
-          mask: true
-        }),
+    wx.request({
+      url: postComment(),
+      method: 'POST',
+      data: 'author_name=' + nickName + '&author_url=' + avatarUrl + '&author_email=wxapp@wechat.qq.com&content=' + comment + '&post=' + articleId,
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.statusCode === 201) {
+          wx.showToast({
+            title: '提交成功',
+            icon: 'success',
+            duration: 2000,
+            mask: true
+          }),
           setTimeout(function () {
             wx.navigateBack({
               delta: 1
             })
           }, 2000)
-      } else {
-        resolve();
+        }
       }
-    });
+    })
   }
 })
