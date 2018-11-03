@@ -31,7 +31,7 @@
   position: absolute;
   bottom: 10px;
   width: 750rpx;
-   z-index: 1003;
+  z-index: 1003;
 }
 
 .articleBlock {

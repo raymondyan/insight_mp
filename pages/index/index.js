@@ -17,7 +17,7 @@ Page({
     animationOfCategoryPicker: {},
     fullPickerPaddingTop: app.globalData.statusBarHeight + 45
   },
-  onLoad: function () {
+  onLoad: function (options) {
     let scope = this
     scope.recentPost(scope.data.pageNum)
     var quickCategories = categories.slice(0, 5)
@@ -123,6 +123,11 @@ Page({
   goToSearch: function () {
     wx.navigateTo({
       url: '../search/search',
+    })
+  },
+  goToEvent: function () {
+    wx.navigateTo({
+      url: '../eventAgenda/eventAgenda',
     })
   }
 });

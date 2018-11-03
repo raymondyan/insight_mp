@@ -1,5 +1,5 @@
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     let scope = this;
     require('utils/sdk-v1.3.0');
     let clientID = 'e88f19721e83348a7c4c';
@@ -10,24 +10,6 @@ App({
         scope.globalData.windowHeight = res.windowHeight
         scope.globalData.isIPhoneX = res.model.indexOf("iPhone X") != -1
         scope.globalData.isAndroid = res.system.indexOf("Android") != -1
-      }
-    })
-    wx.login({
-      success: res => {
-      }
-    })
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              this.globalData.userInfo = res.userInfo
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
       }
     })
   },

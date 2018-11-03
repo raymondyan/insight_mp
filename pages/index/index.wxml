@@ -10,6 +10,7 @@
 </view>
 
 <view class="navbar {{navTitle?'navbar-opacity':''}}" style='height:{{fullPickerPaddingTop}}px'>
+  <image bindtap='goToSearch' wx:if="{{navTitle}}" class='nav_search' src='../../img/search_tran.png'></image>
   <view class='navbar_text'>{{navTitle}}</view>
 </view>
 
@@ -24,7 +25,7 @@
     <image class="searchIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
   </view>
 
-  <navigator class='aboutUs' url="../about/about" >关于我们 ▸ </navigator>
+  <navigator class='aboutUs' url="../about/about">关于我们 ▸ </navigator>
 
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
@@ -45,7 +46,6 @@
       切换分类
     </view>
   </view> -->
- <image class='eventImage' src='../../img/techradar.png' mode='widthFix'/>
   <view class='recent_post'>
     <navigator url="../article/article?aid={{article.id}}" class='articleBlock' hover-stay-time="300" wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}'>
       <view class='categories'>

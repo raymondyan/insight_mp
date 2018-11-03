@@ -2,7 +2,6 @@
 <view wx:if="{{showLoading}}" class='fullWindowModal' style='height:{{fullWindowHeight}}px'>
   <image class='loadingGif' src='../../img/loading.gif' mode='aspectFill'></image>
 </view>
-<view class="{{hideLayer === 1 ? 'hidden-layer hide':'hidden-layer'}}" bindtap="closeOtherBar"></view>
 <view id='article_zone'>
   <view class="articleIntro" style="background-image: url('{{thumbUrl?thumbUrl:defaultThumb}}');height:{{thumbUrl?thumbHeight:280}}px ">
     <text class="articleTitle">{{title}}</text>
@@ -31,7 +30,7 @@
 <view class='comments'>
   <view class='comment_header'>
     <view class='comment'>评论</view>
-    <view class='new_comment' bindtap="goToComment">发表评论</view>
+    <button class='new_comment' open-type='getUserInfo' bindgetuserinfo="goToComment">发表评论</button>
   </view>
   <view class="empty_comment" wx:if="{{comment_number == 0}}">
     <image src="../../img/empty.png"></image>
@@ -85,16 +84,11 @@
     <image class="action-icon" src="../../img/comment.png" mode="aspectFit"></image>
     <view class="comment-number">{{comment_number}}</view>
   </view>
-  <view class='action-bar-area' bindtap="callLightChange">
+  <view class='action-bar-area' bindtap="callActions">
     <image class="action-icon" src="../../img/more.png" mode="aspectFit"></image>
   </view>
 </view>
 <view wx:if="{{isPhoneX}}" class='phoneXDangerZone'></view>
-<view class="light-change" animation="{{animationDataOfLightChange}}">
-  <view class="light-change-tips">
-    <text>调节亮度</text>
-  </view>
-  <view class="body-view">
-    <slider bindchanging="changeLight" activeColor="#707070" value="{{sliderValue}}" />
-  </view>
-</view>
+
+
+<canvas hidden="{{canvasHidden}}" style='position:fixed;bottom:-{{canvasheight}}px;width:600px;height:{{canvasheight}}px'  canvas-id="articlePost"></canvas>

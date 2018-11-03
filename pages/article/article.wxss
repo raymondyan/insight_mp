@@ -470,12 +470,47 @@ button::after {
   color: #bfbfbf;
 }
 
-@font-face {
-  font-family: 'Droid Sans Mono';
-  src: url('DroidSansMono.eot');
-  font-weight: normal;
-  font-style: normal;
+
+.myActionSheet {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, 1000px, 0);
+  transition: transform 0.5s;
 }
+
+.myActionSheet .ul {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background: #edecf3;
+}
+
+.myActionSheet button {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  border: none;
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0;
+}
+
+.myActionSheet button::after {
+  border-bottom: 1px solid #edecf3;
+  border-radius: 0;
+}
+
+.myActionSheet button:last-child {
+  margin-top: 10rpx;
+  border: none;
+  border-radius: 0;
+}
+
 
 @font-face {
   font-family: 'Droid Sans Mono';

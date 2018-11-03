@@ -13,6 +13,15 @@
   border-bottom: 1rpx solid #ebebeb; 
 }
 
+.nav_search {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  z-index: 1005;
+}
+
 .navbar_text {
   font-size: 19px;
   color: #000;
@@ -20,6 +29,7 @@
   position: absolute;
   bottom: 10px;
   width: 750rpx;
+  z-index: 1003;
 }
 
 .articleBlock {
@@ -174,11 +184,4 @@
   width: 750rpx;
   height: 300rpx;
   background-color: #ebebeb;
-}
-
-
-
-.eventImage {
-  width: 96%;
-  margin-left: 2%;
 }

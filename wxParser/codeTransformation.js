@@ -492,7 +492,8 @@ const codeMap = {
   '比特币': hiddenChar,
   '虚拟货币': hiddenChar,
   '虚拟交易': hiddenChar,
-  'BitCoin': hiddenChar
+  'BitCoin': hiddenChar,
+  '区块链': hiddenChar
 };
 
 /**

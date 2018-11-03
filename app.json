@@ -5,8 +5,7 @@
     "pages/categoryPage/categoryPage",
     "pages/search/search",
     "pages/about/about",
-    "pages/comment/comment",
-    "pages/eventAgenda/eventAgenda"
+    "pages/comment/comment"
   ],
   "window":{
     "backgroundTextStyle":"light",

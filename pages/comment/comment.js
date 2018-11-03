@@ -11,40 +11,10 @@ Page({
     let scope = this;
     scope.setData({
       articleId: parseInt(options.id),
+      nickName: options.userName,
+      avatarUrl: options.avatar
     })
     scope.queryArticle(options.id)
-  },
-  onShow: function () {
-    let scope = this;
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.userInfo']) {
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success() {
-              scope.getUserInfo()
-            },
-            fail() {
-              scope.reAuth()
-            }
-          })
-        } else {
-          scope.getUserInfo()
-        }
-      }
-    })
-  },
-  getUserInfo: function () {
-    let scope = this;
-    wx.getUserInfo({
-      success: function (res) {
-        var userInfo = res.userInfo
-        scope.setData({
-          nickName: userInfo.nickName,
-          avatarUrl: userInfo.avatarUrl
-        })
-      }
-    })
   },
   queryArticle: function (aid) {
     let scope = this;
@@ -57,32 +27,6 @@ Page({
         resolve();
       }
     });
-  },
-  reAuth: function () {
-    let scope = this;
-    wx.showModal({
-      title: '提示',
-      content: '我们获取不到您的昵称和头像，因此您当前无法评论，点击“授权”可以进入设置页面重新授权，点击取消放弃评论',
-      confirmText: "授权",
-      confirmColor: "#118eea",
-      success: function (res) {
-        if (res.confirm) {
-          wx.openSetting({
-            success: (res) => {
-              if (!res.authSetting['scope.userInfo']) {
-                scope.reAuth();
-              } else {
-                scope.getUserInfo()
-              }
-            }
-          })
-        } else if (res.cancel) {
-          wx.navigateBack({
-            delta: 1
-          })
-        }
-      }
-    })
   },
   commentInputing: function (e) {
     this.setData({
@@ -123,6 +67,10 @@ Page({
       return 0
     }
     let articleId = data.articleId;
+    wx.showLoading({
+      title: '提交评论中',
+      mask: true
+    })
     wx.request({
       url: postComment(),
       method: 'POST',
@@ -131,21 +79,29 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
-        if (res.statusCode === 201) {
+        wx.hideLoading()
+        if (res.data.hasOwnProperty('author_name')) {
           wx.showToast({
             title: '提交成功',
             icon: 'success',
             duration: 2000,
             mask: true
-          }),
+          });
           setTimeout(function () {
             wx.navigateBack({
               delta: 1
             })
           }, 2000)
+        } else {
+          wx.showToast({
+            title: '提交失败',
+            icon: 'success',
+            duration: 2000,
+            mask: true
+          })
         }
       }
     })
   }
+  
 })

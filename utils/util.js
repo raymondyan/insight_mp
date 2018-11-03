@@ -1,34 +1,41 @@
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-  var dateArray = [year, month, day]
-  return dateArray[0] + '年' + dateArray[1] + '月' + dateArray[2] + '日'
+function formatTime(date, type = 1) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+  const addZero = (num) => num < 10 ? '0' + num : num;
+  const dateArray = [year, month, day, hour, minute, second];
+  if (type === 2 ) {
+    return dateArray[3] + ':' + addZero(dateArray[4])
+  } else if( type === 3) {
+    return dateArray[0] + '-' + dateArray[1] + '-' + dateArray[2] + ' ' + dateArray[3] + ':' + dateArray[4] + ':' + dateArray[5]
+  } else {
+    return dateArray[0] + '年' + dateArray[1] + '月' + dateArray[2] + '日'
+  }
 }
 
 
 function hommizationTime(date) {
-  var dateTimeStamp = new Date(date).getTime();
-  var result;
-  var minute = 1000 * 60;
-  var hour = minute * 60;
-  var day = hour * 24;
-  var month = day * 30;
-  var now = new Date().getTime();
-  var diffValue = now - dateTimeStamp;
+  const dateTimeStamp = new Date(date).getTime();
+  let result;
+  const minute = 1000 * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const month = day * 30;
+  const now = new Date().getTime();
+  const diffValue = now - dateTimeStamp;
   if (diffValue >= 0) {
     //非法操作
     //alert("结束日期不能小于开始日期！");
   }
-  var yearC = diffValue / (365 * day)
-  var monthC = diffValue / month;
-  var weekC = diffValue / (7 * day);
-  var dayC = diffValue / day;
-  var hourC = diffValue / hour;
-  var minC = diffValue / minute;
+  const yearC = diffValue / (365 * day);
+  const monthC = diffValue / month;
+  const weekC = diffValue / (7 * day);
+  const dayC = diffValue / day;
+  const hourC = diffValue / hour;
+  const minC = diffValue / minute;
 
   if (yearC >= 1) {
     result = "" + parseInt(yearC) + "年前";
@@ -60,4 +67,4 @@ module.exports = {
   formatTime: formatTime,
   hommizationTime: hommizationTime,
   remove_emoji: remove_emoji
-}
+};

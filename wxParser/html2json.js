@@ -137,6 +137,7 @@ const html2json = (html, bindName) => {
       let node = bufferNodes.shift(); // 取出缓冲区的第一个的未关闭标签，也就是与该结束标签对应的标签
 
       if (node.tag !== tag) {
+        console.log(node)
         throw new Error('不匹配的关闭标签');
       }
 
