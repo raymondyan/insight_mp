@@ -70,7 +70,7 @@
     </view>
   </view>
 </view>
-<view class="action-bar {{isPhoneX?'phoneX':''}}">
+<view class="action-bar" style="padding-bottom:{{safeZoneBottom}}px ">
   <view wx:if="{{isFromShare}}" class='action-bar-area' bindtap="goHome">
     <image class="action-icon" src="../../img/home.png" mode="aspectFit"></image>
   </view>
@@ -88,7 +88,6 @@
     <image class="action-icon" src="../../img/more.png" mode="aspectFit"></image>
   </view>
 </view>
-<view wx:if="{{isPhoneX}}" class='phoneXDangerZone'></view>
 
 
 <canvas hidden="{{canvasHidden}}" style='position:fixed;bottom:-{{canvasheight}}px;width:600px;height:{{canvasheight}}px'  canvas-id="articlePost"></canvas>

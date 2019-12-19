@@ -11,6 +11,8 @@
 	"libVersion": "2.0.8",
 	"appid": "wx6ac335896f1078f1",
 	"projectname": "Insight_release",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -29,13 +31,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "wenzhang",
 					"pathName": "pages/article/article",
-					"query": "aid=7462"
+					"query": "aid=10292",
+					"scene": null
 				},
 				{
 					"id": 1,

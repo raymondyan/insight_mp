@@ -6,10 +6,12 @@ App({
     wx.BaaS.init(clientID);
     wx.getSystemInfo({
       success: function (res) {
+        console.log(res)
         scope.globalData.statusBarHeight = res.statusBarHeight || res.statusbarHeight
         scope.globalData.windowHeight = res.windowHeight
         scope.globalData.isIPhoneX = res.model.indexOf("iPhone X") != -1
         scope.globalData.isAndroid = res.system.indexOf("Android") != -1
+        scope.globalData.safeZoneBottom = res.screenHeight - (res.safeArea ? res.safeArea.bottom : res.screenHeight);
       }
     })
   },

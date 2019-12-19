@@ -100,19 +100,6 @@ page {
   z-index: 1004;
 }
 
-.phoneX {
-  bottom: 34px;
-}
-
-.phoneXDangerZone {
-  position: fixed;
-  width: 750rpx;
-  height: 40px;
-  bottom: 0;
-  background-color: #f6f8f9;
-  z-index: 1003;
-}
-
 .action-bar-area {
   width: 160rpx;
   display: flex;
@@ -366,7 +353,7 @@ button::after {
 }
 
 .comments {
-  padding-bottom: 100rpx;
+  padding-bottom: 130rpx;
 }
 
 .mainComment {

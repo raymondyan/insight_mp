@@ -488,12 +488,12 @@ const codeMap = {
   '&diams;': '♦',
 
   // 敏感词去敏感
-  '以太坊': hiddenChar,
-  '比特币': hiddenChar,
-  '虚拟货币': hiddenChar,
-  '虚拟交易': hiddenChar,
-  'BitCoin': hiddenChar,
-  '区块链': hiddenChar
+  // '以太坊': hiddenChar,
+  // '比特币': hiddenChar,
+  // '虚拟货币': hiddenChar,
+  // '虚拟交易': hiddenChar,
+  // 'BitCoin': hiddenChar,
+  // '区块链': hiddenChar
 };
 
 /**

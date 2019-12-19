@@ -15,6 +15,7 @@ Page({
     canvasheight: 0,
     statusBarBackgroundHeight: app.globalData.statusBarHeight,
     isPhoneX: app.globalData.isIPhoneX,
+    safeZoneBottom: app.globalData.safeZoneBottom,
     isAndroid: app.globalData.isAndroid,
     defaultThumb: "https://dynamic.thoughtworks.com/homepage/background_image-64d5209f7ec217f9e95e17ed99b44278.png"
   },
@@ -61,7 +62,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         scope.setData({
-          thumbHeight: res.windowHeight - 40 - (app.globalData.isIPhoneX ? 34 : 0),
+          thumbHeight: res.windowHeight - 40 - app.globalData.safeZoneBottom,
           fullWindowHeight: res.windowHeight
         })
       }
