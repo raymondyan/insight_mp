@@ -6,7 +6,7 @@
   line-height: 50px; 
   font-size: 50rpx;
   font-weight: 900;
-  margin:auto 3%;
+  margin:auto 2%;
   color: #000;
 }
 

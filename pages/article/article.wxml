@@ -84,9 +84,9 @@
     <image class="action-icon" src="../../img/comment.png" mode="aspectFit"></image>
     <view class="comment-number">{{comment_number}}</view>
   </view>
-  <view class='action-bar-area' bindtap="callActions">
+  <!-- <view class='action-bar-area' bindtap="callActions">
     <image class="action-icon" src="../../img/more.png" mode="aspectFit"></image>
-  </view>
+  </view> -->
 </view>
 
 

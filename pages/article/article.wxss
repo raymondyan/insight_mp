@@ -122,12 +122,6 @@ page {
   border-top: 2rpx solid #ddd;
 }
 
-.light-change-tips {
-  text-align: center;
-  font-size: 32rpx;
-  color: #707070;
-  padding: 5px 0;
-}
 
 .body-view {
   width: 80%;
@@ -135,22 +129,31 @@ page {
 }
 
 .wxParser-h1 .wxParserText {
-  font-size: 40rpx;
+  font-size: 48rpx;
   color: #3f3f3f;
 }
 
 .wxParser-h2 .wxParserText {
-  font-size: 36rpx;
+  font-size: 44rpx;
   color: #3f3f3f;
 }
 
 .wxParser-h3 .wxParserText {
-  font-size: 32rpx;
+  font-size: 40rpx;
   color: #3f3f3f;
 }
 
-.wxParser-p, .wxParser-h1, .wxParser-h2, .wxParser-h3, .wxParser-h4,
-.wxParser-span, .wxParser-li {
+.wxParser-h4 .wxParserText {
+  font-size: 40rpx;
+  color: #3f3f3f;
+}
+
+.wxParser-h3 .wxParserText {
+  font-size: 36rpx;
+  color: #3f3f3f;
+}
+
+.wxParser-p, .wxParser-h1, .wxParser-h2, .wxParser-h3, .wxParser-h4, .wxParser-h5, .wxParser-span, .wxParser-li {
   width: 92%;
   margin: 0 auto;
 }
@@ -159,15 +162,10 @@ page {
   margin: 0 4%;
 }
 
-.wxParser-p, .wxParser-h3 {
-  padding: 20rpx 0;
-}
-
 .wxParserText {
-  font-size: 28rpx;
-  /*letter-spacing: 1px;*/
-  line-height: 48rpx;
-  color: #444;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  color: #333;
   word-break: break-all;
 }
 
@@ -226,6 +224,10 @@ image {
   line-height: 20rpx;
 }
 
+.wxParser .wxParser-ol {
+  margin: 20rpx 50rpx;
+}
+
 .wxParser-blockquote {
   padding: 20rpx 30rpx 20rpx 14rpx;
   border-left: 16rpx #23241f solid;
@@ -233,6 +235,19 @@ image {
 
 .wxParser-blockquote .wxParserText {
   line-height: 38rpx;
+}
+
+.wp-caption-text {
+  text-align: right;
+}
+
+.wp-caption-text .wxParserText {
+  color: #999;
+  font-size: 20rpx;
+}
+
+.wxParser-ul>.wxParserText.wxParser-inline, .wxParser-ol>.wxParserText.wxParser-inline{
+  display: none;
 }
 
 .author_block {
@@ -274,7 +289,7 @@ image {
 }
 
 .author_card .company_logo {
-  height: 32rpx;
+  height: 35rpx;
   width: 200rpx;
   padding-top: 30rpx;
 }

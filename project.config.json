@@ -1,84 +1,97 @@
 {
-	"description": "项目配置文件。",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.0.8",
-	"appid": "wx6ac335896f1078f1",
-	"projectname": "Insight_release",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "wenzhang",
-					"pathName": "pages/article/article",
-					"query": "aid=10292",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "dddd",
-					"pathName": "pages/categoryPage/categoryPage",
-					"query": "cid=85"
-				},
-				{
-					"id": 2,
-					"name": "search",
-					"pathName": "pages/search/search",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "about",
-					"pathName": "pages/about/about",
-					"query": ""
-				},
-				{
-					"id": 4,
-					"name": "comment",
-					"pathName": "pages/comment/comment",
-					"query": "id=6821"
-				},
-				{
-					"id": 5,
-					"name": "ss",
-					"pathName": "pages/eventAgenda/eventAgenda",
-					"query": "",
-					"scene": "1011"
-				},
-				{
-					"id": -1,
-					"name": "ss",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": "1011"
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": false,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.0.8",
+  "appid": "wx6ac335896f1078f1",
+  "projectname": "Insight_release",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "wenzhang",
+          "pathName": "pages/article/article",
+          "query": "aid=10292",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "dddd",
+          "pathName": "pages/categoryPage/categoryPage",
+          "query": "cid=85"
+        },
+        {
+          "id": 2,
+          "name": "search",
+          "pathName": "pages/search/search",
+          "query": ""
+        },
+        {
+          "id": 3,
+          "name": "about",
+          "pathName": "pages/about/about",
+          "query": ""
+        },
+        {
+          "id": 4,
+          "name": "comment",
+          "pathName": "pages/comment/comment",
+          "query": "id=6821"
+        },
+        {
+          "id": 5,
+          "name": "ss",
+          "pathName": "pages/eventAgenda/eventAgenda",
+          "query": "",
+          "scene": "1011"
+        },
+        {
+          "id": -1,
+          "name": "ss",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": "1011"
+        }
+      ]
+    }
+  }
 }

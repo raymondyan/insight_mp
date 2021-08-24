@@ -4,7 +4,7 @@ const codeTransformation = require('../../wxParser/codeTransformation');
 const { getTags, searchPosts } = require('../../utils/api');
 
 const sensitiveWords = [
-  "区块链",
+  // "区块链",
   "比特币",
   "币",
   "比特",

@@ -4,16 +4,12 @@
 
 
 <view class='brand'>
-  <image class='logo' src="../../img/cropped-TW.png"></image>
-  <view class='name'>
-    <view class='name_cn'>思特沃克 洞见</view>
-    <view class='name_en'>ThoughtWorks Insights</view>
-  </view>
+  <image class='logo' src="../../img/insight-logo.png" mode="aspectFit"></image>
 </view>
 
 <view class='tips'>
-<view>洞见新文章在公众号“思特沃克”定期推送，如需了解最新的洞见资讯可关注我们的微信公众号。</view>
-<view>微信号: ThoughtWorks</view>
+<view>洞见新文章在公众号“Thoughtworks洞见”定期推送，如需了解最新的洞见资讯可关注我们的微信公众号。</view>
+<view>微信号: TW-Insights</view>
 </view>
 
 <view class='aboutInsight'>
@@ -25,18 +21,17 @@
   <view>TW洞见就是这样的媒体渠道，汇集了来自TW最优秀的那些经验和思考，分享给真正对软件有意愿思考和不断改进的人。</view>
 </view>
 
-<view class='captain'>关于ThoughtWorks</view>
+<view class='captain'>关于Thoughtworks</view>
 
 <view class='aboutInsight'>
-  <view>ThoughtWorks是一家全球软件设计与定制领袖企业。</view>
-  <view>截止2017年，ThoughtWorks在十五个国家：澳大利亚、巴西、中国、智利、厄瓜多尔、德国、印度、意大利、新加坡、泰国、西班牙、南非、土耳其、英国和美国成立分公司，聘用4500位行业精英，通过全球资源共享和人才交流服务全球高端客户。</view>
-  <view>ThoughtWorks的业务模式主要通过咨询帮助改善企业的IT组织，改进软件开发方法，以软件带动企业业务发展。ThoughtWorks并非一家劳动密集型企业，不以人才扩张为支撑业务发展的基础。</view>
-  <view>ThoughtWorks以发展高、精、尖的创新业务设计和创意咨询为主要业务内容，以高端人才带动整个产业的理念革新和方法进步，促进整个产业链的健康生态循环。</view>
-  <view>ThoughtWorks服务的客户重视软件开发方法，重视软件对业务发展至关重要的作用；鼓励创意设计，寻求创新的业务模式以占据企业翘楚。</view>
-  <view>通过定制软件开发，ThoughtWorks为客户提供集创意设计、开发及交付为一体的定制服务。</view>
+  <view>Thoughtworks是一家全球软件设计与定制领袖企业。</view>
+  <view>Thoughtworks 成立于 1993 年，如今已从一个小团队发展成为在 17 个国家拥有 9,000 多名员工的全球领先的软件及咨询公司。我们拥有专业卓越的跨职能团队，汇集了大量战略专家、开发人员、数据工程师和设计师，20 多年来，他们为全球各地的众多合作伙伴倾力服务。</view>
+  <view>Thoughtworks 首创“分布式敏捷”概念，我们深知如何集全球团队之力大规模交付卓越的软件。如今，我们致力于帮助客户开启流畅数字化之路，提升公司应变能力，引航未来征程。</view>
+  <view>Thoughtworks 满怀自豪与热忱地投身工作，努力使公司自身和整个行业对我们所服务的社会更加包容、有所广益。因此，我们的员工全部以真实的自我全力投入工作。我们憎恶并且拒绝歧视和不平等现象，倡导多元化。我们各具特色，互相鼓励，互相支持。我们欣赏诚实和坦率的品格。我们关注思想、看重从事正确的事情，而无关外表和背景。为世界各地的客户所面临的种种挑战寻求技术解决方案，是我们共同的核心目标。</view>
+
 </view>
 <view class='captain'>版权声明</view>
 
 <view class='aboutInsight'>
-  <view>本应用所有内容，包括文字、图片、音视频资料和链接中的所有内容，版权均属ThoughtWorks公司所有，任何媒体、网站或个人未经本网协议授权不得转载、链接、转贴或以其他方式复制发布/发表。已经本网协议授权的媒体、网站，在使用时必须注明”内容来源：ThoughtWorks洞见”，并指定原文链接，违者本网将依法追究责任。</view>
+  <view>本应用所有内容，包括文字、图片、音视频资料和链接中的所有内容，版权均属Thoughtworks公司所有，任何媒体、网站或个人未经本公司协议授权不得转载、链接、转贴或以其他方式复制发布/发表。已经本公司协议授权的媒体、网站，在使用时必须注明”内容来源：Thoughtworks洞见”，并指定原文链接，违者本网将依法追究责任。</view>
 </view>

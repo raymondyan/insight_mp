@@ -3,6 +3,8 @@ const elements = require('./elements');
 const codeTransformation = require('./codeTransformation');
 const htmlParser = require('./htmlparser');
 
+let olTagCount = [];
+
 /**
  * 移除文档头信息
  * @param  {String} str   HTML 内容
@@ -20,7 +22,6 @@ const removeDOCTYPE = (str) => {
  */
 const html2json = (html, bindName) => {
   html = removeDOCTYPE(html);
-  html = codeTransformation.transform(html);
 
   // 节点缓冲区，与 htmlparser.js 中的 stack 对应，只存储非自闭和标签
   // 比如 <span></span>，而非 <img src="#"> 等
@@ -47,6 +48,7 @@ const html2json = (html, bindName) => {
       if (parent.nodes === undefined) {
         parent.nodes = [];
       }
+      node.parent = parent.tag
       parent.nodes.push(node);
     }
   };
@@ -111,6 +113,16 @@ const html2json = (html, bindName) => {
         node.styleStr = nodeStyles.join(' ');
       }
 
+      if (node.tag == 'ol' || node.tag == 'ul') {
+        olTagCount.push(0)
+      }
+
+      if (node.tag == 'li') {
+        let len = olTagCount.length - 1
+        olTagCount[len] = olTagCount[len] + 1
+        node.order = olTagCount[len]
+      }
+
       // img 标签 添加额外数据
       if (node.tag === 'img') {
         node.imgIndex = results.images.length;
@@ -118,6 +130,27 @@ const html2json = (html, bindName) => {
 
         results.images.push(node);
         results.imageUrls.push(node.attr.src);
+      }
+
+      if (node.tag === 'video' || node.tag === 'audio') {
+        node.attr.controls = !node.attr.controls ? false : true
+        node.attr.autoplay = !node.attr.autoplay ? false : true
+        node.attr.loop = !node.attr.loop ? false : true
+      }
+
+      if (node.tag === 'video') {
+        node.attr.muted = !node.attr.muted ? false : true
+      }
+
+      if (node.tag === 'audio') {
+        let params = node.attr['data-extra']
+        if (params) {
+           params = params.replace(new RegExp('&quot;', 'g'), '"');
+           params = JSON.parse(params)
+           node.attr.poster = params.poster
+           node.attr.name = params.name
+           node.attr.author = params.author
+        }
       }
 
       if (isUnary) {
@@ -137,8 +170,26 @@ const html2json = (html, bindName) => {
       let node = bufferNodes.shift(); // 取出缓冲区的第一个的未关闭标签，也就是与该结束标签对应的标签
 
       if (node.tag !== tag) {
-        console.log(node)
         throw new Error('不匹配的关闭标签');
+      }
+
+      if (node.tag == 'ol' || node.tag == 'ul') {
+        olTagCount.pop()
+      }
+
+      if (node.tag === 'video' || node.tag === 'audio') {
+        if (!node.attr.src) {
+          let nodes = node.nodes
+          let len = nodes.length
+          let src = ''
+          for (let i = 0; i < len; i++) {
+            if (nodes[i].tag === 'source') {
+              src = nodes[i].attr.src
+              break
+            }
+          }
+          node.attr.src = src
+        }
       }
 
       putNode2ParentNodeList(node);
@@ -150,7 +201,7 @@ const html2json = (html, bindName) => {
     text: function (text) {
       let node = {
         node: 'text',
-        text: text,
+        text: codeTransformation.transform(text),
       };
 
       putNode2ParentNodeList(node);

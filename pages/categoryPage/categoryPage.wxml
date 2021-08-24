@@ -7,7 +7,7 @@
   {{categoryName}}
 </view>
 
-<view class='post'>
+<view class='recent_post'>
   <navigator url="../article/article?aid={{article.id}}" hover-stay-time="300" class='articleBlock' wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}'>
     <view class='categories'>
       <block wx:for="{{article.categoryName}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">

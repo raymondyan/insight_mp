@@ -5,27 +5,23 @@
         {{category.name}}
       </view>
     </block>
-    <view class='category_link' style='color: #d9534f;background-color:#f2dede' bindtap='callFullPicker'>关闭</view>
+    <view class='category_link' style='color: #edf1f3;background-color:#f2617a' bindtap='callFullPicker'>关闭</view>
   </view>
 </view>
 
 <view class="navbar {{navTitle?'navbar-opacity':''}}" style='height:{{fullPickerPaddingTop}}px'>
-  <image bindtap='goToSearch' wx:if="{{navTitle}}" class='nav_search' src='../../img/search_tran.png'></image>
-  <view class='navbar_text'>{{navTitle}}</view>
+  <image wx:if="{{navTitle}}" class="nav_insightLogo" src='../../img/insight-logo.png' mode='aspectFit' ></image>
 </view>
 
-<view></view>
 
 <view catchtouchmove="{{hideLayer > 0 ? 'true':''}}">
   <view wx:if="{{hideLayer > 0}}" class='over-panel-layer' bindtap='closeFullPicker'></view>
   <view class="page_header {{navTitle?'page_header-opacity':''}}" style='padding-top:{{fullPickerPaddingTop}}px'>
-    <view>
-      ThoughtWorks 洞见
-    </view>
+    <navigator class='aboutUs' url="../about/about"><image class="insightLogo" src='../../img/insight-logo.png' mode='aspectFit' ></image></navigator>    
     <image class="searchIcon" bindtap='goToSearch' src='../../img/search.png' mode='aspectFill'></image>
   </view>
 
-  <navigator class='aboutUs' url="../about/about">关于我们 ▸ </navigator>
+  <navigator class='disclaimer' url="../about/about">关于我们 / 版权声明  ▸  </navigator>
 
   <view class='category_links'>
     <block wx:for="{{quickCategories}}" wx:key="idx" wx:for-index="idx" wx:for-item="category">
@@ -33,19 +29,10 @@
         {{category.name}}
       </view>
     </block>
-    <view class='category_link' style='color: #1286FE' bindtap='callFullPicker'>全部分类</view>
+    <view class='category_link' style='color: #47A1Ad' bindtap='callFullPicker'>全部分类</view>
   </view>
 
 
-
-  <!-- <view class="common_header {{isFixedToTop?'fixed':''}}" style='{{isFixedToTop?"top:"+fullPickerPaddingTop+"px":""}}'>
-    <view>
-      近期洞见
-    </view>
-    <view wx:if="{{isFixedToTop}}" class='exchange_icon' bindtap='callFullPicker'>
-      切换分类
-    </view>
-  </view> -->
   <view class='recent_post'>
     <navigator url="../article/article?aid={{article.id}}" class='articleBlock' hover-stay-time="300" wx:for="{{articleList}}" wx:key="idx" wx:for-index="idx" wx:for-item="article" id='{{article.id}}'>
       <view class='categories'>

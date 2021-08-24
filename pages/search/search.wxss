@@ -1,12 +1,12 @@
 page {
-  background-color: #f2f2f2;
+  background-color: #edf1f3;
 }
 
 .box_bg {
   position: fixed;
   top: 0;
   width: 750rpx;
-  background-color: #118eea;
+  background-color: #003D4F;
   z-index: 1001;
 }
 
@@ -64,7 +64,7 @@ page {
 
 .content_view .tags .tag {
   font-size: 26rpx;
-  color: #1286fe;
+  color: #47A1Ad;
   background-color: white;
   border-radius: 8rpx;
   padding: 10rpx 20rpx;

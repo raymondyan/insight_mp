@@ -9,7 +9,7 @@ function getCategories() {
 }
 
 function getTags() {
-  return getURL('/wp/v2/tags?per_page=20&orderby=count&order=desc&context=embed')
+  return getURL('/wp/v2/tags?per_page=50&orderby=count&order=desc&context=embed')
 }
 
 function getArticleByCategoryId(categoryId, pageNum) {

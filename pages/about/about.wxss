@@ -20,17 +20,13 @@
 }
 
 .brand {
-  padding-top: 100px;
+  padding-top: 120px;
   padding-bottom: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 6%;
+  
 }
 
 .logo {
-  height: 108rpx;
-  width: 108rpx;
+  height: 72rpx;
 }
 
 .name {
@@ -55,8 +51,8 @@
   padding: 10px 6%;
   margin-bottom: 25px;
   font-size: 28rpx;
-  color: #1286fe;
-  background-color: #ebf3fb;
+  color: #6e9e78;
+  background: #F0F6F1;
   border: 1px solid #f8f8f8;
 }
 

@@ -1,8 +1,13 @@
 const categories = [
   {
     "id": 14,
-    "name": "敏捷",
-    "slug": "agile",
+    "name": "敏捷实践",
+    "slug": "agile-practice",
+  },
+  {
+    "id": 85,
+    "name": "组织转型",
+    "slug": "organization-transformation",
   },
   {
     "id": 42,
@@ -10,70 +15,39 @@ const categories = [
     "slug": "tech-radar",
   },
   {
-    "id": 1066,
-    "name": "中台",
-    "slug": "zhongtai",
+    "id": 4008,
+    "name": "新兴技术",
+    "slug": "emerging-technology",
   },
   {
-    "id": 78,
-    "name": "体验设计",
-    "slug": "experience-design",
+    "id": 4009,
+    "name": "组织文化",
+    "slug": "organization-culture",
   },
   {
-    "id": 739,
-    "name": "领域驱动设计",
-    "slug": "ddd",
+    "id": 4010,
+    "name": "企业架构",
+    "slug": "enterprise-architecture",
   },
   {
-    "id": 606,
-    "name": "内建安全",
-    "slug": "bsi",
+    "id": 4012,
+    "name": "智能企业",
+    "slug": "intelligent-enterprise",
   },
   {
-    "id": 605,
-    "name": "DevOps",
-    "slug": "devops",
+    "id": 4014,
+    "name": "金融科技",
+    "slug": "fintech",
   },
   {
-    "id": 756,
-    "name": "区块链",
-    "slug": "blockchain",
+    "id": 4011,
+    "name": "数字化转型",
+    "slug": "digital-transformation",
   },
   {
-    "id": 75,
-    "name": "大数据",
-    "slug": "bigdata",
-  },
-  {
-    "id": 604,
-    "name": "微服务",
-    "slug": "microservices",
-  },  
-  {
-    "id": 1741,
-    "name": "规模化创新",
-    "slug": "large-scale-innovation",
-  },
-  {
-    "id": 610,
-    "name": "数字平台战略",
-    "slug": "dps",
-  },
-  {
-    "id": 85,
-    "name": "组织转型",
-    "slug": "transformation",
-  },
-  {
-    "id": 76,
-    "name": "职业发展",
-    "slug": "career",
-  },
-
-  {
-    "id": 83,
-    "name": "软件测试",
-    "slug": "testing",
+    "id": 4013,
+    "name": "数字化创新设计",
+    "slug": "digital-innovation-design",
   }
 ]
 

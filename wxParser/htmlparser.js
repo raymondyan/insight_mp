@@ -34,16 +34,6 @@ const parseHtml = (html, handler) => {
           html = html.substring(index + 3);
           isText = false;
         }
-      } else if (html.indexOf('<script') === 0) { // comment
-        index = html.indexOf('/script>'); // indexOf 会匹配到第一个满足条件的字符位置
-        if (index !== -1) {
-          if (handler.comment) {
-            // 因为注释信息不会像其他标签那样包含内部标签，所以可以直接传注释内容给 handler 处理
-            handler.comment(html.substring(4, index));
-          }
-          html = html.substring(index + 8);
-          isText = false;
-        }
       } else if (html.indexOf('</') === 0) { // end tag
         match = html.match(endTagReg);
         if (match) {
@@ -63,7 +53,7 @@ const parseHtml = (html, handler) => {
       // 处理文本内容
       if (isText) {
         index = html.indexOf('<');
-        let text = '';
+        let text = ''
         while (index === 0 && !html.match(startTagReg)) { // 处理以 < 开头，但是却不满足 startTagReg 的情况
           text += '<';
           html = html.substring(1);
@@ -71,7 +61,7 @@ const parseHtml = (html, handler) => {
         }
         text += index < 0 ? html : html.substring(0, index);
         html = index < 0 ? '' : html.substring(index);
-        text = text.replace(new RegExp('&lt;', 'g'), '<').replace(new RegExp('&gt;', 'g'), '>')
+
         if (handler.text) {
           handler.text(text);
         }

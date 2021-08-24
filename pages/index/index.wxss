@@ -1,10 +1,11 @@
+@import "./card.wxss";
+
 .navbar {
   background-color: #FFF;
   position: fixed;
   z-index: 1002;
   top: 0;
   width: 750rpx;
-  text-align: center;
   overflow: hidden;
 }
 
@@ -13,28 +14,12 @@
   border-bottom: 1rpx solid #ebebeb; 
 }
 
-.nav_search {
-  width: 40rpx;
-  height: 40rpx;
+.nav_insightLogo {
   position: absolute;
-  bottom: 10px;
-  left: 15px;
-  z-index: 1005;
-}
-
-.navbar_text {
-  font-size: 19px;
-  color: #000;
-  font-weight: 500;
-  position: absolute;
-  bottom: 10px;
-  width: 750rpx;
+  bottom: 6px;
+  width: 400rpx;
+  height: 64rpx;
   z-index: 1003;
-}
-
-.articleBlock {
-  padding: 15px 0 15px 0;
-  border-bottom: 9px solid #ebebeb;
 }
 
 .common_header {
@@ -47,6 +32,11 @@
   align-items: center;
 }
 
+.insightLogo {
+  width: 460rpx;
+  height: 75rpx;
+}
+
 .searchIcon {
   width: 64rpx;
   height: 64rpx;
@@ -54,31 +44,20 @@
 
 .aboutUs {
   padding: 0;  
-  padding-left: 22.5rpx;
-  height: 30px;
-  line-height: 30px;
   color: #1286fe;
   font-size: 15px;
   font-weight: 500;
+  height: 64rpx;
+  line-height: 64rpx;
 }
 
-.exchange_icon {
-  background-color: #1286fe;
-  color: white;
-  font-size: 26rpx;
-  font-weight: 500;
-  height: 28px;
-  line-height: 28px;
-  margin-right: 3%;
-  padding: 0 14px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
+.disclaimer {
+  padding: 10px;
+  padding-left: 20PX;
+  color: #003D4F;
+  font-size: 13px;
 }
 
-.articleBlock:first-child {
-  border-top: 9px solid #ebebeb;
-}
 
 .category_links, .full_category_links {
   display: flex;
@@ -116,72 +95,6 @@
   margin: 5px auto;
   text-align: center;
   border-radius: 5px;
-  background-color: #f8f8f8;
+  background-color: #edf1f3;
 }
 
-.fixed {
-  position: fixed;
-  z-index: 1001;
-  border-bottom: 1rpx solid #ebebeb;
-  background-color:hsla(0,0%,100%,.98);
-}
-
-.fixed + .recent_post {
-  padding-top: 40px;
-}
-
-.articleBlock .categories {
-  padding-left: 3%;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 5px;
-}
-
-.articleBlock .category {
-  font-size: 25rpx;
-  color: #1286fe;
-  background: #ebf3fb;
-  padding: 2px 6px;
-  margin-right: 8px;
-  border-radius: 4px;
-}
-
-.articleBlock .title {
-  padding:0 3%;
-  font-size: 36rpx;
-  font-weight: 500;
-  color: #1a1a1a;
-}
-
-.articleBlock .excerpt {
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 5px;
-  font-size: 28rpx;
-  color: #444;
-  text-align: left;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-.articleBlock .details {
-  padding-top: 5px;
-  padding-left: 3%;
-  font-size: 26rpx;
-  color: #999;
-}
-
-.articleBlock .details text {
-  padding-right: 8px;
-}
-
-.articleBlock .articleImage {
-  margin-top: 8px;
-  width: 750rpx;
-  height: 300rpx;
-  background-color: #ebebeb;
-}
